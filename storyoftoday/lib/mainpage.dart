@@ -134,7 +134,7 @@ class _MainPageState extends State<MainPage> {
                                   onPressed: (context) async {
                                     Get.bottomSheet(Container(
                                       width: double.infinity,
-                                      height: 250,
+                                      height: 220,
                                       decoration: BoxDecoration(
                                         borderRadius:
                                             const BorderRadius.vertical(
@@ -160,14 +160,14 @@ class _MainPageState extends State<MainPage> {
                                               },
                                               style: ElevatedButton.styleFrom(
                                                 minimumSize:
-                                                    const Size(400, 60),
+                                                    const Size(400, 55),
                                                 backgroundColor: const Color.fromARGB(
                                                     255, 255, 188, 183),
                                               ),
                                               child: const Text(
                                                 'DELETE',
                                                 style: TextStyle(
-                                                    fontSize: 25,
+                                                    fontSize: 22,
                                                     fontWeight: FontWeight.bold,
                                                     color: Colors.black),
                                               )),
@@ -180,7 +180,7 @@ class _MainPageState extends State<MainPage> {
                                               },
                                               style: ElevatedButton.styleFrom(
                                                   minimumSize:
-                                                      const Size(400, 60),
+                                                      const Size(400, 55),
                                                   // backgroundColor: Color.fromARGB(255, 146, 148, 255),
                                                   backgroundColor:
                                                       Theme.of(context)
@@ -189,7 +189,7 @@ class _MainPageState extends State<MainPage> {
                                               child: const Text(
                                                 'CANCEL',
                                                 style: TextStyle(
-                                                    fontSize: 25,
+                                                    fontSize: 22,
                                                     fontWeight: FontWeight.bold,
                                                     color: Colors.black)
                                               )),

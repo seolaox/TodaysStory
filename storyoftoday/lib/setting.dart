@@ -32,13 +32,19 @@ class _SettingState extends State<Setting> {
     SharedPreferences prefs = await SharedPreferences.getInstance(); 
     setState(() {
       iconTheme = prefs.getBool('iconTheme') ?? false; //sharedPreferences를 사용하여 'iconTheme' 키에 저장된 값을 가져오고, 만약 값이 없으면 기본값으로 false를 사용
+      themeName = prefs.getString('themeName') ?? '다크모드';
     }); //setState 함수를 사용하여 상태를 업데이트하고, iconTheme 변수에 로드된 값을 할당
   }
 
   // 사용자가 테마를 변경할 때 호출하여 새로운 테마를 저장
   Future<void> saveIconTheme(bool value) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.setBool('iconTheme', value); //prefs.setBool('iconTheme', value)를 사용하여 'iconTheme' 키에 전달된 value 값을 저장
+    prefs.setBool('iconTheme', value); //prefs.setBool('iconTheme', value)를 사용하여 'iconTheme' 키에 전달된 value 값을 저장;
+  }
+
+  Future<void> saveNameTheme(String value) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString('themeName', value); //prefs.setBool('iconTheme', value)를 사용하여 'iconTheme' 키에 전달된 value 값을 저장;
   }
 
   @override
@@ -188,6 +194,7 @@ class _SettingState extends State<Setting> {
                               widget.onChangeTheme(ThemeMode.dark);
                             }
                             saveIconTheme(iconTheme); // 변경된 값 저장
+                            saveNameTheme(themeName);
                           });
                         },
                         icon: iconTheme == true
