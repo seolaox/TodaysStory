@@ -128,7 +128,7 @@ class _MemoPageState extends State<MemoPage> {
                                 child: Text(
                                   snapshot.data![index].memo,
                                   style: const TextStyle(
-                                      fontSize: 17,
+                                      fontSize: 16,
                                       fontWeight: FontWeight.bold),
                                   maxLines: 1, // 한 줄을 초과하면 말줄임표(ellipsis)를 표시
                                   overflow: TextOverflow.ellipsis,
@@ -171,7 +171,7 @@ class _MemoPageState extends State<MemoPage> {
         child: SingleChildScrollView(
           child: Container(
           width: double.infinity,
-          height: 550,
+          height: 380,
           decoration: BoxDecoration(
             color: Theme.of(context).colorScheme.secondaryContainer,
             borderRadius: const BorderRadius.vertical(top: Radius.circular(30.0)),
@@ -181,7 +181,7 @@ class _MemoPageState extends State<MemoPage> {
             children: [
               const Text(
                 '- MEMO -',
-                style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
               ),
               Padding(
                 padding: const EdgeInsets.all(3.0),
@@ -204,14 +204,14 @@ class _MemoPageState extends State<MemoPage> {
                     ),
                   ),
                   keyboardType: TextInputType.multiline,
-                  maxLines: 13,
+                  maxLines: 8,
                   style: const TextStyle(
-                    fontSize: 16,
+                    fontSize: 15,
                   ),
                 ),
               ),
               const SizedBox(
-                height: 20,
+                height: 5,
               ),
               ElevatedButton(
                 onPressed: () {
@@ -262,7 +262,7 @@ class _MemoPageState extends State<MemoPage> {
         child: SingleChildScrollView(
           child: Container(
           width: double.infinity,
-          height: 550,
+          height: 380,
           decoration: BoxDecoration(
             color: Theme.of(context).colorScheme.secondaryContainer,
             borderRadius: const BorderRadius.vertical(top: Radius.circular(30.0)),
@@ -270,10 +270,9 @@ class _MemoPageState extends State<MemoPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(height: 10,),
               const Text(
                 '- MEMO -',
-                style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
               ),
               Padding(
                 padding: const EdgeInsets.all(3.0),
@@ -296,14 +295,14 @@ class _MemoPageState extends State<MemoPage> {
                     ),
                   ),
                   keyboardType: TextInputType.multiline,
-                  maxLines: 13,
+                  maxLines: 8,
                   style: const TextStyle(
-                    fontSize: 16,
+                    fontSize: 15,
                   ),
                 ),
               ),
               const SizedBox(
-                height: 20,
+                height: 5,
               ),
               ElevatedButton(
                 onPressed: () {

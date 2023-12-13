@@ -53,32 +53,36 @@ class _SettingState extends State<Setting> {
         },
         child: Column(
           children: [
-            Container(
-              height: 60,
-              width: 400,
-              decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 238, 239, 242),
-                borderRadius: BorderRadius.circular(10), // 원하는 둥글기 정도를 설정
-              ),
-              child: const Row(
-                children: [
-                  SizedBox(
-                    width: 20,
-                  ),
-                  Text(
-                    '버전',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600, color: Colors.black)),
-                  SizedBox(
-                    width: 265,
-                  ),
-                  Text(
-                    'ver 1.0',
-                    style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w500,
-                        color: Color.fromARGB(255, 146, 146, 146)),
-                  ),
-                ],
+            Padding(
+              padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
+              child: Container(
+                height: 60,
+                width: 400,
+                decoration: BoxDecoration(
+                  color: const Color.fromARGB(255, 238, 239, 242),
+                  borderRadius: BorderRadius.circular(10), // 원하는 둥글기 정도를 설정
+                ),
+                child: const Row(
+                  children: [
+                    SizedBox(
+                      width: 20,
+                    ),
+                    Text(
+                      '버전',
+                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: Colors.black)),
+                      const Spacer(),
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(0, 0, 30, 0),
+                      child: Text(
+                        'ver 1.0',
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                            color: Color.fromARGB(255, 146, 146, 146)),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
             Divider(
@@ -89,26 +93,30 @@ class _SettingState extends State<Setting> {
               onTap: () {
                 Get.to(() => const TermsOfService());
               },
-              child: Container(
-                height: 60,
-                width: 400,
-                decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 238, 239, 242),
-                  borderRadius: BorderRadius.circular(10), // 원하는 둥글기 정도를 설정
-                ),
-                child: const Row(
-                  children: [
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Text(
-                      '서비스 이용 약관',
-                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600, color: Colors.black)),
-                    SizedBox(
-                      width: 200,
-                    ),
-                    Icon(Icons.arrow_forward_ios)
-                  ],
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
+                child: Container(
+                  height: 60,
+                  width: 400,
+                  decoration: BoxDecoration(
+                    color: const Color.fromARGB(255, 238, 239, 242),
+                    borderRadius: BorderRadius.circular(10), // 원하는 둥글기 정도를 설정
+                  ),
+                  child: const Row(
+                    children: [
+                      SizedBox(
+                        width: 20,
+                      ),
+                      Text(
+                        '서비스 이용 약관',
+                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: Colors.black)),
+                        const Spacer(),
+                      Padding(
+                        padding: EdgeInsets.fromLTRB(0, 0, 30, 0),
+                        child: Icon(Icons.arrow_forward_ios),
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -118,26 +126,30 @@ class _SettingState extends State<Setting> {
             ),
             GestureDetector(
               onTap: () => Get.to(() => const Tutorial()),
-              child: Container(
-                height: 60,
-                width: 400,
-                decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 238, 239, 242),
-                  borderRadius: BorderRadius.circular(10), // 원하는 둥글기 정도를 설정
-                ),
-                child: const Row(
-                  children: [
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Text(
-                      'Tutorial',
-                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600, color: Colors.black)),
-                    SizedBox(
-                      width: 261,
-                    ),
-                    Icon(Icons.arrow_forward_ios)
-                  ],
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
+                child: Container(
+                  height: 60,
+                  width: 400,
+                  decoration: BoxDecoration(
+                    color: const Color.fromARGB(255, 238, 239, 242),
+                    borderRadius: BorderRadius.circular(10), // 원하는 둥글기 정도를 설정
+                  ),
+                  child: const Row(
+                    children: [
+                      SizedBox(
+                        width: 20,
+                      ),
+                      Text(
+                        'Tutorial',
+                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: Colors.black)),
+                        const Spacer(),
+                      Padding(
+                        padding: EdgeInsets.fromLTRB(0, 0, 30, 0),
+                        child: Icon(Icons.arrow_forward_ios),
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -145,51 +157,54 @@ class _SettingState extends State<Setting> {
               thickness: 0.1,
               color: Colors.grey[450],
             ),
-            Container(
-              height: 60,
-              width: 400,
-              decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 238, 239, 242),
-                borderRadius: BorderRadius.circular(10), // 원하는 둥글기 정도를 설정
-              ),
-              child: Row(
-                children: [
-                  const SizedBox(width: 20,),
-                  Text(themeName,
-                      style:
-                  const TextStyle(fontSize: 20, fontWeight: FontWeight.w600, color: Colors.black)),
-                  const Spacer(), //항상 오른쪽 끝에 위치, 남는 공간을 채움
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(0, 0, 20, 0),
-                    child: IconButton(
-                      onPressed: () {
-                        setState(() {
-                          if (iconTheme == true) {
-                            iconTheme = false;
-                            themeName = '다크 모드';
-                            widget.onChangeTheme(ThemeMode.light);
-                          } else {
-                            iconTheme = true;
-                            themeName = '라이트 모드';
-                            widget.onChangeTheme(ThemeMode.dark);
-                          }
-                          saveIconTheme(iconTheme); // 변경된 값 저장
-                        });
-                      },
-                      icon: iconTheme == true
-                          ? Icon(
-                              Icons.sunny,
-                              color: Colors.amber[300],
-                              size: 28,
-                            )
-                          : Icon(
-                              Icons.dark_mode,
-                              color: Colors.amber[300],
-                              size: 28,
-                            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
+              child: Container(
+                height: 60,
+                width: 400,
+                decoration: BoxDecoration(
+                  color: const Color.fromARGB(255, 238, 239, 242),
+                  borderRadius: BorderRadius.circular(10), // 원하는 둥글기 정도를 설정
+                ),
+                child: Row(
+                  children: [
+                    const SizedBox(width: 20,),
+                    Text(themeName,
+                        style:
+                    const TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: Colors.black)),
+                    const Spacer(), //항상 오른쪽 끝에 위치, 남는 공간을 채움
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 0, 20, 0),
+                      child: IconButton(
+                        onPressed: () {
+                          setState(() {
+                            if (iconTheme == true) {
+                              iconTheme = false;
+                              themeName = '다크 모드';
+                              widget.onChangeTheme(ThemeMode.light);
+                            } else {
+                              iconTheme = true;
+                              themeName = '라이트 모드';
+                              widget.onChangeTheme(ThemeMode.dark);
+                            }
+                            saveIconTheme(iconTheme); // 변경된 값 저장
+                          });
+                        },
+                        icon: iconTheme == true
+                            ? Icon(
+                                Icons.sunny,
+                                color: Colors.amber[300],
+                                size: 28,
+                              )
+                            : Icon(
+                                Icons.dark_mode,
+                                color: Colors.amber[300],
+                                size: 28,
+                              ),
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
             Divider(

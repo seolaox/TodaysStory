@@ -238,11 +238,11 @@ class _MainPageState extends State<MainPage> {
                                           Text(
                                             snapshot.data![index].eventdate ??
                                                 'No Date',
-                                            style: const TextStyle(fontSize: 16),
+                                            style: const TextStyle(fontSize: 14),
                                           ),
                                           IconButton(
                                             onPressed: () {},
-                                            iconSize: 22,
+                                            iconSize: 18,
                                             icon: getIconWidget(snapshot
                                                     .data![index]
                                                     .weathericon ??
@@ -253,7 +253,7 @@ class _MainPageState extends State<MainPage> {
                                       Text(
                                         snapshot.data![index].title,
                                         style: const TextStyle(
-                                            fontSize: 18,
+                                            fontSize: 16,
                                             fontWeight: FontWeight.bold),
                                         maxLines:
                                             1, // 한 줄을 초과하면 말줄임표(ellipsis)를 표시
@@ -261,7 +261,7 @@ class _MainPageState extends State<MainPage> {
                                       ),
                                       Text(
                                         snapshot.data![index].content,
-                                        style: const TextStyle(fontSize: 17),
+                                        style: const TextStyle(fontSize: 15),
                                         maxLines:
                                             1, // 한 줄을 초과하면 말줄임표(ellipsis)를 표시
                                         overflow: TextOverflow.ellipsis,

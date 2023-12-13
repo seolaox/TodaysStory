@@ -130,7 +130,7 @@ class _EventDetailState extends State<EventDetail> {
                   keyboardType: TextInputType.text,
                   readOnly: true,
                   style: const TextStyle(
-                      fontSize: 16, fontWeight: FontWeight.bold),
+                      fontSize: 15, fontWeight: FontWeight.bold),
                 ),
               ),
               Padding(
@@ -154,9 +154,9 @@ class _EventDetailState extends State<EventDetail> {
                   ),
                   keyboardType: TextInputType.multiline,
                   readOnly: true,
-                  maxLines: 13,
+                  maxLines: 10,
                   style: const TextStyle(
-                    fontSize: 16,
+                    fontSize: 15,
                   ),
                 ),
               ),

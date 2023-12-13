@@ -234,7 +234,7 @@ class _EventUpdateState extends State<EventUpdate> {
                     ),
                     keyboardType: TextInputType.text,
                     style: const TextStyle(
-                        fontSize: 16, fontWeight: FontWeight.bold),
+                        fontSize: 15, fontWeight: FontWeight.bold),
                   ),
                 ),
                 Padding(
@@ -257,9 +257,9 @@ class _EventUpdateState extends State<EventUpdate> {
                       ),
                     ),
                     keyboardType: TextInputType.multiline,
-                    maxLines: 13,
+                    maxLines: 10,
                     style: const TextStyle(
-                      fontSize: 16,
+                      fontSize: 15,
                     ),
                   ),
                 ),
@@ -331,7 +331,7 @@ class _EventUpdateState extends State<EventUpdate> {
         getImageFromGallery(ImageSource.gallery);
       },
       child: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(15.0),
         child: Container(
           width: double.infinity,
           height: 270,
