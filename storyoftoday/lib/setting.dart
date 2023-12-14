@@ -76,7 +76,7 @@ class _SettingState extends State<Setting> {
                     Text(
                       '버전',
                       style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: Colors.black)),
-                      const Spacer(),
+                      Spacer(),
                     Padding(
                       padding: EdgeInsets.fromLTRB(0, 0, 30, 0),
                       child: Text(
@@ -116,7 +116,7 @@ class _SettingState extends State<Setting> {
                       Text(
                         '서비스 이용 약관',
                         style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: Colors.black)),
-                        const Spacer(),
+                        Spacer(),
                       Padding(
                         padding: EdgeInsets.fromLTRB(0, 0, 30, 0),
                         child: Icon(Icons.arrow_forward_ios),
@@ -149,7 +149,7 @@ class _SettingState extends State<Setting> {
                       Text(
                         'Tutorial',
                         style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: Colors.black)),
-                        const Spacer(),
+                        Spacer(),
                       Padding(
                         padding: EdgeInsets.fromLTRB(0, 0, 30, 0),
                         child: Icon(Icons.arrow_forward_ios),

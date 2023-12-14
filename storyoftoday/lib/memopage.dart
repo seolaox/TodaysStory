@@ -46,16 +46,16 @@ class _MemoPageState extends State<MemoPage>
     super.dispose();
   }
 
-  // 탭 변경을 처리하는 함수
-  void _handleTabChange() {
-    if (_tabController.index == 0) {
-      // Memo 탭에서 실행되는 동작
-      insertBottomSheet();
-    } else if (_tabController.index == 1) {
-      // ToDoList 탭에서 실행되는 동작
-      insertToDoBottomSheet();
-    }
-  }
+  // // 탭 변경을 처리하는 함수
+  // void _handleTabChange() {
+  //   if (_tabController.index == 0) {
+  //     // Memo 탭에서 실행되는 동작
+  //     insertBottomSheet();
+  //   } else if (_tabController.index == 1) {
+  //     // ToDoList 탭에서 실행되는 동작
+  //     insertToDoBottomSheet();
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -264,23 +264,6 @@ class _MemoPageState extends State<MemoPage>
                                                 overflow: TextOverflow.ellipsis,
                                               ),
                                             ),
-                                            // Padding(
-                                            //   padding:
-                                            //       const EdgeInsets.fromLTRB(
-                                            //           8, 8, 0, 0),
-                                            //   child: Text(
-                                            //     snapshot.data![index]
-                                            //                 .todoinsertdate !=
-                                            //             null
-                                            //         ? DateFormat('yyyy-MM-dd')
-                                            //             .format(snapshot
-                                            //                 .data![index]
-                                            //                 .todoinsertdate!)
-                                            //         : 'No Date',
-                                            //     style: const TextStyle(
-                                            //         fontSize: 15),
-                                            //   ),
-                                            // ),
                                           ],
                                         ),
                                       ),
@@ -338,6 +321,7 @@ class _MemoPageState extends State<MemoPage>
     handler.queryTodoList();
     setState(() {});
   }
+  
 
   insertBottomSheet() {
     Get.bottomSheet(

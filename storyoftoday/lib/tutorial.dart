@@ -75,7 +75,7 @@ class _TutorialState extends State<Tutorial> {
               const Text('앱을 실행할 때 구성되는 첫 화면입니다.'),
               const Text('입력한 내용을 검색하면 키워드 검색으로 해당 기록물만 띄워줍니다.'),
               const Text('기록물을 클릭 시 입력한 내용을 자세히 볼 수 있습니다.'),
-              const SizedBox(height: 50,),
+              const SizedBox(height: 60,),
                 Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -86,7 +86,7 @@ class _TutorialState extends State<Tutorial> {
               const SizedBox(height: 10,),
               const Text('해당 카드를 오른쪽으로 밀고 edit를 클릭 시 수정 페이지로 이동합니다.'),
               const Text('날짜,날씨,제목,내용,사진등을 변경할 수 있습니다.'),
-              const SizedBox(height: 50,),
+              const SizedBox(height: 60,),
                 Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
