@@ -111,8 +111,23 @@ class _TutorialState extends State<Tutorial> {
               const Text('+버튼 누르면 입력창을 띄웁니다.'),
               const Text('해당 카드를 클릭하거나 오른쪽으로 밀면 수정,'),
               const Text('왼쪽으로 밀면 삭제할 수 있습니다.'),
-              const SizedBox(height: 50,),
-              const Text('5. Theme 변경',style: TextStyle(fontSize: 19,fontWeight: FontWeight.w700),),
+              const SizedBox(height: 60,),
+              
+              const Text('5. Todolist 입력',style: TextStyle(fontSize: 19,fontWeight: FontWeight.w700),),
+                Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+              Image.asset('images/todolist.png',width: 130,height: 270,),
+              Image.asset('images/todoupdate.png',width: 130,height: 270,),
+              Image.asset('images/tododelete.png',width: 130,height: 270,),
+                ],
+              ),
+              const SizedBox(height: 10,),
+              const Text('+버튼 누르면 입력창을 띄웁니다.'),
+              const Text('해당 카드를 클릭하거나 오른쪽으로 밀면 수정,'),
+              const Text('왼쪽으로 밀면 삭제할 수 있습니다.'),
+              const SizedBox(height: 60,),
+              const Text('6. Theme 변경',style: TextStyle(fontSize: 19,fontWeight: FontWeight.w700),),
                 Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -123,7 +138,7 @@ class _TutorialState extends State<Tutorial> {
               const SizedBox(height: 10,),
               const Text('해, 달 이모티콘을 클릭 시 테마 변경이 가능합니다.'),
               const SizedBox(height: 50,),
-              const Text('6. 사진 권한',style: TextStyle(fontSize: 19,fontWeight: FontWeight.w700),),
+              const Text('7. 사진 권한',style: TextStyle(fontSize: 19,fontWeight: FontWeight.w700),),
                 Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

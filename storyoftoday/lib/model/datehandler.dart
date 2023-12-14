@@ -1,3 +1,5 @@
+import 'package:storyoftoday/model/todolist.dart';
+
 import 'memopad.dart';
 import 'sdiary.dart';
 import 'package:path/path.dart';
@@ -24,6 +26,19 @@ class DatabaseHandler {
       onCreate: (database, version) async {
         await database.execute(
             "create table memopad(id integer primary key autoincrement, memo text, memoinsertdate text)");
+      },
+      version: 1,
+    );
+  }
+ // ----
+
+    Future<Database> initializeTodoListDB() async {
+    String path = await getDatabasesPath();
+    return openDatabase(
+      join(path, 'todolist.db'),
+      onCreate: (database, version) async {
+        await database.execute(
+            "create table todolist(id integer primary key autoincrement, todo text, isChecked tinyint, todoinsertdate text)");
       },
       version: 1,
     );
@@ -117,5 +132,53 @@ class DatabaseHandler {
           memopad.memo,
           memopad.id
           ]);
+  }
+
+
+
+
+//-------------------------------------
+
+
+
+  // Todolist 추가
+  insertTodoList(TodoList todolist) async {
+    final Database db = await initializeTodoListDB();
+    await db.rawInsert(
+  "insert into todolist(todo, isChecked, todoinsertdate) values (?, ?, datetime('now', 'localtime'))",
+  [
+    todolist.todo,
+    todolist.isChecked,
+  ]
+);
+
+  }
+
+  // Todolist 조회
+  Future<List<TodoList>> queryTodoList() async {
+    final Database db = await initializeTodoListDB();
+    final List<Map<String, Object?>> queryResult =
+        await db.rawQuery('select * from todolist');
+    return queryResult.map((e) => TodoList.fromMap(e)).toList();
+  }
+
+  // Todolist 삭제
+  Future deleteTodoList(int id) async {
+    final Database db = await initializeTodoListDB();
+    await db.rawDelete('delete from todolist where id = ?', [id]);
+  }
+
+  // Todolist 업데이트
+  Future updateTodoList(TodoList todolist) async {
+    final Database db = await initializeTodoListDB();
+    await db.rawUpdate(
+      "update todolist set todo = ?, isChecked = ?, todoinsertdate = datetime('now', 'localtime') where id = ?",
+      [
+        todolist.todo,
+        todolist.isChecked,
+        todolist.id
+      ]
+    );
+
   }
 } // DatabaseHandler
