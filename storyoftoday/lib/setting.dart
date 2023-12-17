@@ -63,7 +63,7 @@ class _SettingState extends State<Setting> {
               padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
               child: Container(
                 height: 60,
-                width: 400,
+                width: double.infinity,
                 decoration: BoxDecoration(
                   color: const Color.fromARGB(255, 238, 239, 242),
                   borderRadius: BorderRadius.circular(10), // 원하는 둥글기 정도를 설정
@@ -103,7 +103,7 @@ class _SettingState extends State<Setting> {
                 padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
                 child: Container(
                   height: 60,
-                  width: 400,
+                  width:  double.infinity,
                   decoration: BoxDecoration(
                     color: const Color.fromARGB(255, 238, 239, 242),
                     borderRadius: BorderRadius.circular(10), // 원하는 둥글기 정도를 설정
@@ -136,7 +136,7 @@ class _SettingState extends State<Setting> {
                 padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
                 child: Container(
                   height: 60,
-                  width: 400,
+                  width:  double.infinity,
                   decoration: BoxDecoration(
                     color: const Color.fromARGB(255, 238, 239, 242),
                     borderRadius: BorderRadius.circular(10), // 원하는 둥글기 정도를 설정
@@ -167,7 +167,7 @@ class _SettingState extends State<Setting> {
               padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
               child: Container(
                 height: 60,
-                width: 400,
+                width:  double.infinity,
                 decoration: BoxDecoration(
                   color: const Color.fromARGB(255, 238, 239, 242),
                   borderRadius: BorderRadius.circular(10), // 원하는 둥글기 정도를 설정

@@ -28,7 +28,7 @@ class _EventPageState extends State<EventPage> {
         children: [
           const SizedBox(height: 20,),
           TableCalendar(
-            daysOfWeekHeight: 20,
+            daysOfWeekHeight: 45,
             firstDay: DateTime.utc(2000, 1, 1),
             lastDay: DateTime.utc(2099, 12, 31),
             locale: "ko_KR",

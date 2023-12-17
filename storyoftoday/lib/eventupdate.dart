@@ -331,7 +331,7 @@ class _EventUpdateState extends State<EventUpdate> {
         getImageFromGallery(ImageSource.gallery);
       },
       child: Padding(
-        padding: const EdgeInsets.all(15.0),
+        padding: const EdgeInsets.all(20.0),
         child: Container(
           width: double.infinity,
           height: 270,

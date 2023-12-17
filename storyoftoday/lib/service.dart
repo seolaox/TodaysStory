@@ -206,20 +206,7 @@ class TermsOfService extends StatelessWidget {
                 const Text('• 개인정보 보호책임자'),
                 const Text('    성명: 박설아'),
                 const Text('    연락처: seolaox89@gmail.com'),
-                const Text('② 정보주체는 ❮오늘의 이야기❯의 서비스를 이용하시면서 발생한 모든 개인정보보호 관련 문의, 불만처리, 피해구제 등에 관한 사항을 개인정보 보호책임자 및 담당부서로 문의할 수 있습니다. ❮오늘의 이야기❯는 정보주체의 문의에 대해 지체없이 답변 및 처리해드릴 것입니다.'),
-                const SizedBox(
-                  height: 30,
-                ),
-                const Text(
-                  '권익침해 구제방법',
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                ),
-                const Text('① 정보주체는 개인정보침해로 인한 구제를 받기 위하여 개인정보분쟁조정위원회, 한국인터넷진흥원 개인정보침해신고센터 등에 분쟁해결이나 상담 등을 신청할 수 있습니다. 이 밖에 기타 개인정보침해의 신고, 상담에 대하여는 아래의 기관에 문의하시기 바랍니다.'),
-                const Text('1. 개인정보분쟁조정위원회 : (국번없이) 1833-6972 (www.kopico.go.kr)'),
-                const Text('2. 개인정보침해신고센터 : (국번없이) 118 (privacy.kisa.or.kr)'),
-                const Text('3. 대검찰청 : (국번없이) 1301 (www.spo.go.kr)'),
-                const Text('4. 경찰청 : (국번없이) 182 (ecrm.cyber.go.kr)'),
-                const Text('② 「개인정보 보호법」 제35조(개인정보의 열람), 제36조(개인정보의 정정·삭제), 제37조(개인정보의 처리정지 등)의 규정에 의한 요구에 대 하여 공공기관의 장이 행한 처분 또는 부작위로 인하여 권리 또는 이익의 침해를 받은 자는 행정심판법이 정하는 바에 따라 행정심판을 청구할 수 있습니다.'),
+                const Text('② 정보주체는 ❮오늘의 이야기❯의 서비스를 이용하시면서 발생한 모든 개인정보보호 관련 문의, 불만처리, 피해구제 등에 관한 사항을 개인정보 보호책임자에게 문의할 수 있습니다. ❮오늘의 이야기❯는 정보주체의 문의에 대해 지체없이 답변 및 처리해드릴 것입니다.'),
                 const SizedBox(
                   height: 30,
                 ),
@@ -227,7 +214,8 @@ class TermsOfService extends StatelessWidget {
                   '개인정보 처리방침의 변경',
                   style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                 ),
-                const Text('본 개인정보 처리방침은 2023년 12월 11일부터 시행됩니다.'),
+                const Text('1. 본 개인정보처리방침의 내용 추가, 삭제 및 수정이 있을 경우 혹은 수집하는 개인정보의 항목, 이용목적의 변경 등과 같이 이용자 권리의 중대한 변경이 발생한 경우 필요 시 이용자 동의를 다시 받을 수도 있습니다.'),
+                const Text('2. 본 개인정보 처리방침은 2023년 12월 17일부터 시행됩니다.'),
                 const SizedBox(
                   height: 60,
                 ),
