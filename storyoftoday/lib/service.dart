@@ -215,7 +215,7 @@ class TermsOfService extends StatelessWidget {
                   style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                 ),
                 const Text('1. 본 개인정보처리방침의 내용 추가, 삭제 및 수정이 있을 경우 혹은 수집하는 개인정보의 항목, 이용목적의 변경 등과 같이 이용자 권리의 중대한 변경이 발생한 경우 필요 시 이용자 동의를 다시 받을 수도 있습니다.'),
-                const Text('2. 본 개인정보 처리방침은 2023년 12월 17일부터 시행됩니다.'),
+                const Text('2. 본 개인정보 처리방침은 2023년 12월 18일부터 시행됩니다.'),
                 const SizedBox(
                   height: 60,
                 ),
