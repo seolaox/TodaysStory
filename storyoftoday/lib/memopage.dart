@@ -316,7 +316,6 @@ class _MemoPageState extends State<MemoPage>
   //---Function---
 
   reloadData() {
-    debugPrint('reload');
     handler.queryMemoPad();
     handler.queryTodoList();
     setState(() {});
