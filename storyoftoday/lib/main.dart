@@ -25,7 +25,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-   ThemeMode _themeMode = ThemeMode.system; //사용자의 시스템에 따라 다크모드,라이트모드 설정되도록 하겠다.
+   ThemeMode _themeMode = ThemeMode.light; //사용자의 시스템에 따라 다크모드,라이트모드 설정되도록 하겠다.
 
   _changeThemeMode(ThemeMode themeMode){
     _themeMode = themeMode;
