@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:storyoftoday/eventdetail.dart';
 import 'package:storyoftoday/model/datehandler.dart';
 import 'package:storyoftoday/model/event.dart';
 import 'package:table_calendar/table_calendar.dart';
@@ -136,7 +135,7 @@ class _EventPageState extends State<EventPage> {
                         if (events[selectedDay] != null)
                         Container(
                             padding: const EdgeInsets.only(top: 30),
-                            height: 500,
+                            height: 300,
                             decoration: BoxDecoration(
                               borderRadius: const BorderRadius.only(
                                 topLeft: Radius.circular(50),
@@ -152,7 +151,7 @@ class _EventPageState extends State<EventPage> {
                                   child: Text(
                                     '- Today Event -',
                                     style: TextStyle(
-                                      fontSize: 20,
+                                      fontSize: 18,
                                       fontWeight: FontWeight.bold,
                                       color:
                                           Theme.of(context).colorScheme.secondary,
@@ -160,7 +159,7 @@ class _EventPageState extends State<EventPage> {
                                   ),
                                 ),
                                 Positioned(
-                                  top: 30,
+                                  top: 25,
                                   left: 0,
                                   right: 0,
                                   bottom: 0,
@@ -192,7 +191,7 @@ class _EventPageState extends State<EventPage> {
                                                     child: Text(
                                                       event.eventdate,
                                                       style: const TextStyle(
-                                                        fontSize: 16,
+                                                        fontSize: 15,
                                                       ),
                                                       maxLines: 7,
                                                       overflow: TextOverflow.ellipsis,
