@@ -64,8 +64,7 @@ class _MemoPageState extends State<MemoPage>
       child: Scaffold(
         appBar: AppBar(
           toolbarHeight: 20,
-          bottom: TabBar(
-            controller: _tabController, tabs: const [
+          bottom: TabBar(controller: _tabController, tabs: const [
             Tab(
               icon: Icon(Icons.my_library_books),
               text: "Memo",
@@ -150,7 +149,7 @@ class _MemoPageState extends State<MemoPage>
                                     const Row(),
                                     Padding(
                                       padding:
-                                          const EdgeInsets.fromLTRB(8, 8, 0, 0),
+                                          const EdgeInsets.fromLTRB(8, 15, 0, 2),
                                       child: Text(
                                         snapshot.data![index].memoinsertdate !=
                                                 null
@@ -163,11 +162,11 @@ class _MemoPageState extends State<MemoPage>
                                     ),
                                     Padding(
                                       padding:
-                                          const EdgeInsets.fromLTRB(8, 5, 0, 0),
+                                          const EdgeInsets.fromLTRB(8, 0, 0, 0),
                                       child: Text(
                                         snapshot.data![index].memo,
                                         style: const TextStyle(
-                                            fontSize: 16,
+                                            fontSize: 17,
                                             fontWeight: FontWeight.bold),
                                         maxLines:
                                             1, // 한 줄을 초과하면 말줄임표(ellipsis)를 표시
@@ -195,7 +194,6 @@ class _MemoPageState extends State<MemoPage>
                 builder: (BuildContext context,
                     AsyncSnapshot<List<TodoList>> snapshot) {
                   if (snapshot.hasData) {
-
                     return ListView.builder(
                       itemCount: snapshot.data?.length,
                       itemBuilder: (BuildContext context, int index) {
@@ -233,57 +231,74 @@ class _MemoPageState extends State<MemoPage>
                                   },
                                 ),
                               ]),
-                          child: Card(
-                            shape: const RoundedRectangleBorder(
-                                borderRadius: BorderRadius.all(
-                                    Radius.elliptical(20, 20))),
-                            child: SizedBox(
-                              height: 65,
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Row(
-                                    children: [
-                                      Expanded(
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Padding(
-                                              padding:
-                                                  const EdgeInsets.fromLTRB(
-                                                      8, 5, 0, 0),
-                                              child: Text(
-                                                snapshot.data![index].todo,
-                                                style: const TextStyle(
-                                                    fontSize: 16,
-                                                    fontWeight:
-                                                        FontWeight.bold),
-                                                maxLines:
-                                                    1, // 한 줄을 초과하면 말줄임표(ellipsis)를 표시
-                                                overflow: TextOverflow.ellipsis,
-                                              ),
-                                            ),
-                                          ],
+                          child: GestureDetector(
+                            onTap: () {
+                              updateTodoBottomSheet(snapshot.data![index]);
+                            },
+                            child: Card(
+                              shape: const RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.all(
+                                      Radius.elliptical(20, 20))),
+                              child: SizedBox(
+                                height: 80,
+                                child: Row(
+                                  children: [
+                                    Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.fromLTRB(8, 0, 0, 0),
+                                          child: Text(
+                                            snapshot.data![index].todoinsertdate !=
+                                                    null
+                                                ? DateFormat('yyyy-MM-dd').format(
+                                                    snapshot
+                                                        .data![index].todoinsertdate!)
+                                                : 'No Date',
+                                            style: const TextStyle(fontSize: 14),
+                                          ),
                                         ),
-                                      ),
-                                      Container(
-                                        margin: const EdgeInsets.symmetric(
-                                            horizontal: 15, vertical: 10),
-                                        child: CustomCheckbox(
-                                          value:
-                                              snapshot.data![index].isChecked == 1 ? true : false,
-                                          onChanged: (value) async {
-                                            TodoList updatedTodo = TodoList(todo: snapshot.data![index].todo, isChecked: value == true ? 1 : 0, id: snapshot.data![index].id);
-                                            await handler
-                                                .updateTodoList(updatedTodo);
-                                            reloadData();
-                                          },
+                                        Padding(
+                                          padding: const EdgeInsets.fromLTRB(8, 0, 0, 7),
+                                          child: Text(
+                                                      snapshot.data![index].todo,
+                                                      style: const TextStyle(
+                                                          fontSize: 17,
+                                                          fontWeight:
+                                                              FontWeight.bold),
+                                                      maxLines:
+                                                          1, // 한 줄을 초과하면 말줄임표(ellipsis)를 표시
+                                                      overflow: TextOverflow.ellipsis,
+                                                    ),
                                         ),
-                                      ),
-                                    ],
-                                  )
-                                ],
+                                      ],
+                                    ),
+                                    Spacer(),
+                                    Container(
+                                          margin: const EdgeInsets.symmetric(
+                                              horizontal: 15, vertical: 10),
+                                          child: CustomCheckbox(
+                                            value:
+                                                snapshot.data![index].isChecked ==
+                                                        1
+                                                    ? true
+                                                    : false,
+                                            onChanged: (value) async {
+                                              TodoList updatedTodo = TodoList(
+                                                  todo:
+                                                      snapshot.data![index].todo,
+                                                  isChecked:
+                                                      value == true ? 1 : 0,
+                                                  id: snapshot.data![index].id);
+                                              await handler
+                                                  .updateTodoList(updatedTodo);
+                                              reloadData();
+                                            },
+                                          ),
+                                        )
+                                  ],
+                                ),
                               ),
                             ),
                           ),
@@ -306,12 +321,12 @@ class _MemoPageState extends State<MemoPage>
               insertToDoBottomSheet();
             }
           },
+          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
           child: const Icon(Icons.add),
         ),
       ),
     );
   }
-
 
   //---Function---
 
@@ -320,10 +335,6 @@ class _MemoPageState extends State<MemoPage>
     handler.queryTodoList();
     setState(() {});
   }
-
-
-
-  
 
   insertBottomSheet() {
     Get.bottomSheet(
@@ -516,7 +527,7 @@ class _MemoPageState extends State<MemoPage>
         child: SingleChildScrollView(
           child: Container(
             width: double.infinity,
-            height: 380,
+            height: 300,
             decoration: BoxDecoration(
               color: Theme.of(context).colorScheme.secondaryContainer,
               borderRadius:
@@ -533,7 +544,7 @@ class _MemoPageState extends State<MemoPage>
                   padding: const EdgeInsets.all(3.0),
                   child: TextField(
                     controller: todoController,
-                    maxLength: 200,
+                    maxLength: 100,
                     decoration: const InputDecoration(
                       hintText: '내용을 입력해 주세요. ',
                       enabledBorder: OutlineInputBorder(
@@ -550,7 +561,7 @@ class _MemoPageState extends State<MemoPage>
                       ),
                     ),
                     keyboardType: TextInputType.multiline,
-                    maxLines: 8,
+                    maxLines: 5,
                     style: const TextStyle(
                       fontSize: 15,
                     ),
@@ -611,7 +622,7 @@ class _MemoPageState extends State<MemoPage>
         child: SingleChildScrollView(
           child: Container(
             width: double.infinity,
-            height: 380,
+            height: 300,
             decoration: BoxDecoration(
               color: Theme.of(context).colorScheme.secondaryContainer,
               borderRadius:
@@ -628,7 +639,7 @@ class _MemoPageState extends State<MemoPage>
                   padding: const EdgeInsets.all(3.0),
                   child: TextField(
                     controller: todoModiftController,
-                    maxLength: 200,
+                    maxLength: 100,
                     decoration: const InputDecoration(
                       hintText: '내용을 입력해 주세요. ',
                       enabledBorder: OutlineInputBorder(
@@ -645,7 +656,7 @@ class _MemoPageState extends State<MemoPage>
                       ),
                     ),
                     keyboardType: TextInputType.multiline,
-                    maxLines: 8,
+                    maxLines: 5,
                     style: const TextStyle(
                       fontSize: 15,
                     ),
@@ -690,7 +701,8 @@ class _MemoPageState extends State<MemoPage>
     String todo = todoModiftController.text;
     // bool isChecked = todo.isNotEmpty; // 내용이 비어있지 않으면 true로 설정
 
-    var todoUpdate = TodoList(id: todoId, todo: todo, isChecked: todo.isNotEmpty ? 1 : 0);
+    var todoUpdate =
+        TodoList(id: todoId, todo: todo, isChecked: todo.isNotEmpty ? 1 : 0);
     await handler.updateTodoList(todoUpdate);
     // view
     Get.back();

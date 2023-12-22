@@ -35,18 +35,18 @@ class _CustomCheckboxState extends State<CustomCheckbox> {
         });
       },
       child: Container(
-        width: 22,
-        height: 22,
+        width: 25,
+        height: 25,
         decoration: BoxDecoration(
           border: Border.all(
-            color: Colors.black,
+            color: const Color.fromARGB(255, 98, 96, 96),
           ),
           borderRadius: BorderRadius.circular(4),
         ),
         child: _isChecked
             ? const Icon(
                 Icons.check,
-                size: 20,
+                size: 23,
                 color: Colors.blue,
               )
             : null,

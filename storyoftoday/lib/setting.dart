@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -14,54 +13,34 @@ class Setting extends StatefulWidget {
 }
 
 class _SettingState extends State<Setting> {
-  late bool iconTheme;
-  late String themeName;
-
-
+  bool iconTheme = false;
+  String themeName = '다크 모드';
 
   @override
   void initState() {
     super.initState();
-    iconTheme = false;  
     loadIconTheme(); // 저장된 값 로드
-    themeName = '다크 모드';
   }
 
+  // 앱 시작 시에 호출하여 저장된 아이콘 테마 로드
+  loadIconTheme() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance(); 
+    setState(() {
+      iconTheme = prefs.getBool('iconTheme') ?? false; //sharedPreferences를 사용하여 'iconTheme' 키에 저장된 값을 가져오고, 만약 값이 없으면 기본값으로 false를 사용
+      themeName = prefs.getString('themeName') ?? '다크 모드';
+    }); //setState 함수를 사용하여 상태를 업데이트하고, iconTheme 변수에 로드된 값을 할당
+  }
 
+  // 사용자가 테마를 변경할 때 호출하여 새로운 테마를 저장
+  Future<void> saveIconTheme(bool value) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setBool('iconTheme', value); // prefs.setBool('iconTheme', value)를 사용하여 'iconTheme' 키에 전달된 value 값을 저장;
+  }
 
-  // // 앱 시작 시에 호출하여 저장된 아이콘 테마 로드
-  // Future<void> loadIconTheme() async {
-  //   SharedPreferences prefs = await SharedPreferences.getInstance(); 
-  //   setState(() {
-  //     iconTheme = prefs.getBool('iconTheme') ?? false; //sharedPreferences를 사용하여 'iconTheme' 키에 저장된 값을 가져오고, 만약 값이 없으면 기본값으로 false를 사용
-  //     themeName = prefs.getString('themeName') ?? '다크모드';
-  //   }); //setState 함수를 사용하여 상태를 업데이트하고, iconTheme 변수에 로드된 값을 할당
-  // }
-Future<void> loadIconTheme() async {
-  SharedPreferences prefs = await SharedPreferences.getInstance(); 
-  setState(() {
-    // 항상 초기값으로 설정
-    iconTheme = false;
-    themeName = '다크 모드';
-
-    // 사용자가 선택한 값이 있다면 그 값으로 업데이트
-    if (prefs.containsKey('iconTheme') && prefs.containsKey('themeName')) {
-      iconTheme = prefs.getBool('iconTheme')!;
-      themeName = prefs.getString('themeName')!;
-    }
-  });
-}
-
-// 사용자가 테마를 변경할 때 호출하여 새로운 테마를 저장
-Future<void> saveIconTheme(bool value) async {
-  SharedPreferences prefs = await SharedPreferences.getInstance();
-  prefs.setBool('iconTheme', value); // prefs.setBool('iconTheme', value)를 사용하여 'iconTheme' 키에 전달된 value 값을 저장;
-}
-
-Future<void> saveNameTheme(String value) async {
-  SharedPreferences prefs = await SharedPreferences.getInstance();
-  prefs.setString('themeName', value); // prefs.setBool('iconTheme', value)를 사용하여 'iconTheme' 키에 전달된 value 값을 저장;
-}
+  Future<void> saveNameTheme(String value) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString('themeName', value); // prefs.setBool('iconTheme', value)를 사용하여 'iconTheme' 키에 전달된 value 값을 저장;
+  }
 
   @override
   Widget build(BuildContext context) {
