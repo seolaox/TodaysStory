@@ -67,7 +67,7 @@ class _EventUpdateState extends State<EventUpdate> {
     eventUpdateDate = DateTime.parse(value[6]);
     checkGallery = false;
     date = DateTime.now();
-    selectedDate =  eventUpdateDate ?? date; 
+    selectedDate =  eventUpdateDate; 
     formattedDate = DateFormat('yyyy-MM-dd').format(selectedDate);
   }
 

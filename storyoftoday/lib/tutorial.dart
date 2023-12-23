@@ -45,10 +45,12 @@ class _TutorialState extends State<Tutorial> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
               Image.asset('images/eventpage.png',width: 150,height: 300,),
+              Image.asset('images/eventpagedetail.png',width: 150,height: 300,),
                 ],
               ),
               const SizedBox(height: 10,),
               const Text('기록할 날짜를 지정 후 +버튼을 누르면 입력창으로 이동합니다.',),
+              const Text('일정을 기록 후 입력된 내용을 간략하게 볼 수 있습니다.',),
               const SizedBox(height: 60,),
               const Text('2. Event 입력',style: TextStyle(fontSize: 19,fontWeight: FontWeight.w700),),
               Row(

@@ -144,12 +144,13 @@ class _MemoPageState extends State<MemoPage>
                               child: SizedBox(
                                 height: 80,
                                 child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     const Row(),
                                     Padding(
                                       padding:
-                                          const EdgeInsets.fromLTRB(8, 15, 0, 2),
+                                          const EdgeInsets.fromLTRB(8, 0, 0, 2),
                                       child: Text(
                                         snapshot.data![index].memoinsertdate !=
                                                 null
@@ -162,7 +163,7 @@ class _MemoPageState extends State<MemoPage>
                                     ),
                                     Padding(
                                       padding:
-                                          const EdgeInsets.fromLTRB(8, 0, 0, 0),
+                                          const EdgeInsets.fromLTRB(8, 0, 0, 7),
                                       child: Text(
                                         snapshot.data![index].memo,
                                         style: const TextStyle(
@@ -328,7 +329,7 @@ class _MemoPageState extends State<MemoPage>
     );
   }
 
-  //---Function---
+  //---Function-------------------------------------------------------------------------------
 
   reloadData() {
     handler.queryMemoPad();

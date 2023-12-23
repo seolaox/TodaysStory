@@ -5,6 +5,7 @@ class MyEvent {
   final String title;
   final Uint8List image;
   final String eventdate;
+  final String? weathericon;
 
-MyEvent(this.eventdate, this.image, this.title);
+MyEvent(this.eventdate, this.image, this.title, this.weathericon);
 }

@@ -199,7 +199,7 @@ class _EventDetailState extends State<EventDetail> {
       },
       child: Container(
         width: 390,
-        height: 450,
+        height: 420,
         decoration: BoxDecoration(
           color: const Color.fromARGB(255, 212, 221, 247),
           image: imageFile == null

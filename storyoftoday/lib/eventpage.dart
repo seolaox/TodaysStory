@@ -62,7 +62,8 @@ class _EventPageState extends State<EventPage> {
                             titleCentered: true,
                           ),
                           focusedDay: focusedDay,
-                          onDaySelected: (DateTime selectedDay, DateTime focusedDay) {
+                          onDaySelected:
+                              (DateTime selectedDay, DateTime focusedDay) {
                             setState(() {
                               this.selectedDay = selectedDay;
                               this.focusedDay = focusedDay;
@@ -84,7 +85,8 @@ class _EventPageState extends State<EventPage> {
                                       (index) => Container(
                                         decoration: const BoxDecoration(
                                           shape: BoxShape.circle,
-                                          color: Color.fromARGB(255, 172, 148, 242),
+                                          color: Color.fromARGB(
+                                              255, 172, 148, 242),
                                         ),
                                         width: 10,
                                         height: 10,
@@ -98,50 +100,23 @@ class _EventPageState extends State<EventPage> {
                             },
                           ),
                           selectedDayPredicate: (DateTime day) {
-                            return isSameDay(selectedDay ?? DateTime.now(), day);
+                            return isSameDay(
+                                selectedDay ?? DateTime.now(), day);
                           },
                         ),
                         const SizedBox(height: 10),
-                        // if (events.isEmpty ||
-                        //     (events[selectedDay] != null &&
-                        //         events[selectedDay]!.isEmpty))
-                        //   Container(
-                        //     padding: const EdgeInsets.only(top: 30),
-                        //     height: 500,
-                        //     decoration: BoxDecoration(
-                        //       borderRadius: const BorderRadius.only(
-                        //         topLeft: Radius.circular(50),
-                        //         topRight: Radius.circular(50),
-                        //       ),
-                        //       color: Theme.of(context).colorScheme.secondaryContainer,
-                        //     ),
-                        //     child: Stack(
-                        //       children: [
-                        //         Positioned(
-                        //           top: 0,
-                        //           left: 16,
-                        //           child: Text(
-                        //             'Event가 없습니다.',
-                        //             style: TextStyle(
-                        //               fontSize: 20,
-                        //               fontWeight: FontWeight.bold,
-                        //               color: Theme.of(context).colorScheme.secondary,
-                        //             ),
-                        //           ),
-                        //         ),
-                        //       ],
-                        //     ),
-                        //   )
                         if (events[selectedDay] != null)
-                        Container(
+                          Container(
                             padding: const EdgeInsets.only(top: 30),
-                            height: 300,
+                            height: 345,
                             decoration: BoxDecoration(
                               borderRadius: const BorderRadius.only(
                                 topLeft: Radius.circular(50),
                                 topRight: Radius.circular(50),
                               ),
-                              color: Theme.of(context).colorScheme.secondaryContainer,
+                              color: Theme.of(context)
+                                  .colorScheme
+                                  .secondaryContainer,
                             ),
                             child: Stack(
                               children: [
@@ -149,9 +124,9 @@ class _EventPageState extends State<EventPage> {
                                   top: 0,
                                   left: 16,
                                   child: Text(
-                                    '- Today Event -',
+                                    '- 이날의 이야기 -',
                                     style: TextStyle(
-                                      fontSize: 18,
+                                      fontSize: 16,
                                       fontWeight: FontWeight.bold,
                                       color:
                                           Theme.of(context).colorScheme.secondary,
@@ -166,39 +141,63 @@ class _EventPageState extends State<EventPage> {
                                   child: ListView.builder(
                                     itemCount: events[selectedDay]?.length ?? 0,
                                     itemBuilder: (context, index) {
-                                      MyEvent event = events[selectedDay]![index];
+                                      MyEvent event =
+                                          events[selectedDay]![index];
                                       return Card(
                                         child: Padding(
                                           padding: const EdgeInsets.all(8.0),
                                           child: SizedBox(
                                             height: 200,
                                             width: double.infinity,
-                                            child: Padding(
-                                              padding: const EdgeInsets.all(5.0),
-                                              child: Row(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                                                children: [
-                                                  SizedBox(
-                                                    width: 250,
-                                                    height: 195,
-                                                    child: Image.memory(
-                                                      event.image,
-                                                      fit: BoxFit.cover,
-                                                    ),
+                                            child: Row(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                SizedBox(
+                                                  width: 220,
+                                                  height: 195,
+                                                  child: Image.memory(
+                                                    event.image,
+                                                    fit: BoxFit.cover,
                                                   ),
-                                                  SizedBox(width: 10),
-                                                  Flexible(
-                                                    child: Text(
-                                                      event.eventdate,
-                                                      style: const TextStyle(
-                                                        fontSize: 15,
+                                                ),
+                                                const SizedBox(width: 5),
+                                                Flexible(
+                                                  child: Column(
+                                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                                    children: [
+                                                      Row(
+                                                        children: [
+                                                          Text(
+                                                            event.title,
+                                                            style:
+                                                            const TextStyle(
+                                                          fontSize: 14,
+                                                        ),
+                                                          ),
+                                                          IconButton(
+                                                            onPressed: () {},
+                                                            iconSize: 16,
+                                                            icon: getIconWidget(
+                                                                event.weathericon ??
+                                                                    ''),
+                                                          ),
+                                                        ],
                                                       ),
-                                                      maxLines: 7,
-                                                      overflow: TextOverflow.ellipsis,
-                                                    ),
+                                                      Text(
+                                                        event.eventdate,
+                                                        style:
+                                                            const TextStyle(
+                                                          fontSize: 15,
+                                                        ),
+                                                        maxLines: 7,
+                                                        overflow: TextOverflow
+                                                            .ellipsis,
+                                                      ),
+                                                    ],
                                                   ),
-                                                ],
-                                              ),
+                                                ),
+                                              ],
                                             ),
                                           ),
                                         ),
@@ -229,21 +228,21 @@ class _EventPageState extends State<EventPage> {
   }
 
   Future<void> _updateEvents(data) async {
-  events = {}; // 초기화
+    events = {}; // 초기화
 
-  for (var diary in data!) {
-    int year = int.parse(diary.eventdate!.substring(0, 4));
-    int month = int.parse(diary.eventdate!.substring(5, 7));
-    int day = int.parse(diary.eventdate!.substring(8, 10));
+    for (var diary in data!) {
+      int year = int.parse(diary.eventdate!.substring(0, 4));
+      int month = int.parse(diary.eventdate!.substring(5, 7));
+      int day = int.parse(diary.eventdate!.substring(8, 10));
 
-    DateTime eventDateTime = DateTime.utc(year, month, day);
-    MyEvent event = MyEvent(diary.title, diary.image, diary.eventdate!);
+      DateTime eventDateTime = DateTime.utc(year, month, day);
+      MyEvent event = MyEvent(
+          diary.title, diary.image, diary.eventdate!, diary.weathericon!);
 
-    events[eventDateTime] ??= [];
-    events[eventDateTime]?.add(event);
+      events[eventDateTime] ??= [];
+      events[eventDateTime]?.add(event);
+    }
   }
-}
-
 
   void _openEventInsertPage() {
     Get.to(() =>
@@ -252,5 +251,35 @@ class _EventPageState extends State<EventPage> {
 
   void _changeThemeMode(ThemeMode themeMode) {
     widget.onChangeTheme(themeMode);
+  }
+
+  // 문자열 iconString을 입력으로 받아 해당하는 아이콘을 생성하는 Flutter 위젯을 반환
+  getIconWidget(String iconString) {
+    switch (iconString.toLowerCase()) {
+      case 'sunny':
+        return Icon(
+          Icons.sunny,
+          color: Colors.amber[400],
+        );
+      case 'waterdrop':
+        return Icon(Icons.water_drop, color: Colors.blue[300]);
+      case 'cloud':
+        return Icon(
+          Icons.cloud,
+          color: Colors.grey[400],
+        );
+      case 'air':
+        return Icon(
+          Icons.air,
+          color: Colors.blueGrey[200],
+        );
+      case 'acunit':
+        return Icon(
+          Icons.ac_unit,
+          color: Colors.blue[100],
+        );
+      default:
+        return const Icon(Icons.error);
+    }
   }
 }
