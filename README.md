@@ -62,10 +62,6 @@
 ### 5. 메모 / 투두리스트
 <div style="display: flex; justify-content: space-between;">
 <img alt="color_screen" src="https://github.com/seolaox/TodaysStory/blob/main/storyoftoday/images/memoinsert.png" width="30%">
-<img alt="color_screen" src="https://github.com/seolaox/TodaysStory/blob/main/storyoftoday/images/memoupdate.png" width="30%">
-</div>
-<div style="display: flex; justify-content: space-between;">
-<img alt="color_screen" src="https://github.com/seolaox/TodaysStory/blob/main/storyoftoday/images/memodelete.png" width="30%">
 <img alt="color_screen" src="https://github.com/seolaox/TodaysStory/blob/main/storyoftoday/images/todolist.png" width="30%">
 </div>
 
