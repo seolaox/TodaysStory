@@ -25,8 +25,6 @@
 
 <img alt="color_screen" src="https://github.com/seolaox/TodaysStory/blob/main/storyoftoday/images/eventinsert.png" width="30%">
 
-<br>
-
 - 날씨, 제목, 내용, 이미지를 첨부하여 기록할 수 있습니다.
 
   <br><br>
@@ -40,14 +38,11 @@
 <img alt="color_screen" src="https://github.com/seolaox/TodaysStory/blob/main/storyoftoday/images/eventdelete.png" width="30%">
 <img alt="color_screen" src="https://github.com/seolaox/TodaysStory/blob/main/storyoftoday/images/eventsearch.png" width="30%">
 </div>
-
 <br>
-
 - 기록물을 왼쪽으로 밀거나, 탭하여 수정할 수 있습니다.
 - 기록물을 오른쪽으로 밀어 삭제할 수 있습니다.
 - 기록물의 내용을 기반으로 검색할 수 있습니다.
-
-  <br><br>
+<br><br>
 
 ### 4. 내용 디테일 화면
 
@@ -67,6 +62,8 @@
 <div style="display: flex; justify-content: space-between;">
 <img alt="color_screen" src="https://github.com/seolaox/TodaysStory/blob/main/storyoftoday/images/memoinsert.png" width="30%">
 <img alt="color_screen" src="https://github.com/seolaox/TodaysStory/blob/main/storyoftoday/images/memoupdate.png" width="30%">
+</div>
+<div style="display: flex; justify-content: space-between;">
 <img alt="color_screen" src="https://github.com/seolaox/TodaysStory/blob/main/storyoftoday/images/memodelete.png" width="30%">
 <img alt="color_screen" src="https://github.com/seolaox/TodaysStory/blob/main/storyoftoday/images/todolist.png" width="30%">
 </div>
