@@ -8,16 +8,20 @@
 
 ------
 
-### 시연 영상
+
+
+
+
+
+---
+
+
+# Database
+    SQLITE  
+
+
+# 시연 영상
 <a href="https://drive.google.com/file/d/1F7v24omyGk1MSMJKgkiosoN3rd3CIcGN/view?usp=sharing" title="시연영상으로 이동">
   <img src="https://github.com/seolaox/TodaysStory/blob/main/main%20screen.jpeg" alt="image" ,height="30%", width="30%">
 </a>
-
-------
-
-### 기능 설명
--
--
-
----
 
