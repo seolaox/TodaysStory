@@ -75,7 +75,7 @@ class _SettingState extends State<Setting> {
                     Padding(
                       padding: EdgeInsets.fromLTRB(0, 0, 30, 0),
                       child: Text(
-                        'ver 1.0',
+                        'ver 1.1',
                         style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w500,
