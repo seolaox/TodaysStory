@@ -28,11 +28,12 @@
 - 날씨, 제목, 내용, 이미지를 첨부하여 기록할 수 있습니다.
 
 ### 3. 내용 입력 후 홈 화면
-
+<div style="display: flex; justify-content: space-between;">
 <img alt="color_screen" src="https://github.com/seolaox/TodaysStory/blob/main/storyoftoday/images/homeview.png" width="30%">
-<img alt="color_screen" src="https://github.com/seolaox/TodaysStory/blob/main/storyoftoday/images/eventupdate.png.png" width="30%">
-<img alt="color_screen" src="https://github.com/seolaox/TodaysStory/blob/main/storyoftoday/images/eventdelete.png.png" width="30%">
+<img alt="color_screen" src="https://github.com/seolaox/TodaysStory/blob/main/storyoftoday/images/eventupdate.png" width="30%">
+<img alt="color_screen" src="https://github.com/seolaox/TodaysStory/blob/main/storyoftoday/images/eventdelete.png" width="30%">
 <img alt="color_screen" src="https://github.com/seolaox/TodaysStory/blob/main/storyoftoday/images/eventsearch.png" width="30%">
+</div>
 
 <br>
 
@@ -42,9 +43,10 @@
 
 ### 4. 내용 디테일 화면
 
+<div style="display: flex; justify-content: space-between;">
 <img alt="color_screen" src="https://github.com/seolaox/TodaysStory/blob/main/storyoftoday/images/eventdetail.png" width="30%">
 <img alt="color_screen" src="https://github.com/seolaox/TodaysStory/blob/main/storyoftoday/images/eventpagedetail.png" width="30%">
-
+</div>
 
 <br>
 
@@ -53,11 +55,12 @@
 
 
 ### 5. 메모 / 투두리스트
-
+<div style="display: flex; justify-content: space-between;">
 <img alt="color_screen" src="https://github.com/seolaox/TodaysStory/blob/main/storyoftoday/images/memoinsert.png" width="30%">
 <img alt="color_screen" src="https://github.com/seolaox/TodaysStory/blob/main/storyoftoday/images/memoupdate.png" width="30%">
 <img alt="color_screen" src="https://github.com/seolaox/TodaysStory/blob/main/storyoftoday/images/memodelete.png" width="30%">
 <img alt="color_screen" src="https://github.com/seolaox/TodaysStory/blob/main/storyoftoday/images/todolist.png" width="30%">
+</div>
 
 <br>
 
@@ -65,10 +68,10 @@
 
 
 ### 5. 설정
-
+<div style="display: flex; justify-content: space-between;">
 <img alt="color_screen" src="https://github.com/seolaox/TodaysStory/blob/main/storyoftoday/images/setting.png" width="30%">
 <img alt="color_screen" src="https://github.com/seolaox/TodaysStory/blob/main/storyoftoday/images/tutorial.png" width="30%">
-
+</div>
 
 <br>
 
