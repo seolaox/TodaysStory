@@ -39,6 +39,7 @@
 <img alt="color_screen" src="https://github.com/seolaox/TodaysStory/blob/main/storyoftoday/images/eventsearch.png" width="30%">
 </div>
 <br>
+
 - 기록물을 왼쪽으로 밀거나, 탭하여 수정할 수 있습니다.
 - 기록물을 오른쪽으로 밀어 삭제할 수 있습니다.
 - 기록물의 내용을 기반으로 검색할 수 있습니다.
