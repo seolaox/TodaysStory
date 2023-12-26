@@ -1,6 +1,6 @@
 # 오늘의 이야기
-하루를 간편하게 기록하기 위해 만든 어플리케이션입니다.
-날씨,내용,이미지를 통해 상세하게 기록할 수 있습니다.
+하루를 간편하게 기록하기 위해 만든 어플리케이션입니다. <br>
+날씨,내용,이미지를 첨부하여 상세하게 기록할 수 있습니다.
 
 
 2023-11-22 ~ 2023-11-30                      
@@ -10,67 +10,114 @@
 ### 1. 오늘의 이야기 홈 화면
 
 <div style="display: flex; justify-content: space-between;">
+    <img alt="color_screen" src="https://github.com/seolaox/TodaysStory/blob/main/storyoftoday/images/vacuum.png" width="30%">
     <img alt="color_screen" src="https://github.com/seolaox/TodaysStory/blob/main/storyoftoday/images/eventpage.png" width="30%">
-    <img alt="color_screen" src="https://github.com/seolaox/TodaysStory/blob/main/storyoftoday/images/eventpagedetail.png" width="30%">
 </div>
 
 <br>
 
-- 카메라에 표시된 영역에 얼굴을 맞추면 촬영 버튼이 활성화됩니다.   
-- 상단의 ⓘ 버튼을 누르면 예측이 잘 되는 사진 예시를 확인 가능합니다.
-- 상단의 설정 버튼을 누르면 설정 화면으로 이동합니다.
+- 앱 실행 시 첫 화면 입니다.
+- 두 번째 탭 바로 이동하여 floatbutton을 눌러 내용을 입력할 수 있습니다.
 
-### 2. 퍼스널 컬러 진단 결과 화면
+### 2. 입력 화면
 
-<img alt="color_screen" src="https://github.com/TheJoeunDorothy/Dorothy/assets/130552875/8688fe68-8ca1-4a15-8278-4390aaae8493" width="30%">
-
-<br>
-
-- 퍼스널 컬러 진단 결과를 확인하실 수 있습니다.
-- 결과는 봄 웜톤, 여름 쿨톤, 가을 웜톤, 겨울 쿨톤 4가지로 분류됩니다.
-- 진단된 퍼스널컬러 결과에 따라 다른 배경색이 노출됩니다.
-- 공유하기 버튼으로 결과 화면 캡처 이미지를 공유하실 수 있습니다.
-
-### 3. 나이 예측 결과 화면
-
-<img alt="color_screen" src="https://github.com/TheJoeunDorothy/Dorothy/assets/130552875/148852ac-a221-4eca-accb-d67b2fc49bd9" width="30%">
+<img alt="color_screen" src="https://github.com/seolaox/TodaysStory/blob/main/storyoftoday/images/eventinsert.png" width="30%">
 
 <br>
 
-- 얼굴 나이 예측 결과를 확인하실 수 있습니다.
-- 결과는 10대부터 70대까지 7가지로 분류됩니다.
-- 예측된 나이 예측 결과는 연령대별 퍼센트로 노출됩니다.
-- 공유하기 버튼으로 결과 화면 캡처 이미지를 공유하실 수 있습니다.
+- 날씨, 제목, 내용, 이미지를 첨부하여 기록할 수 있습니다.
 
-### 4. 설정 화면
+### 3. 내용 입력 후 홈 화면
 
-<img alt="color_screen" src="https://github.com/TheJoeunDorothy/Dorothy/assets/130552875/b3987de5-c615-4044-aa85-463e35252609" width="30%">
+<img alt="color_screen" src="https://github.com/seolaox/TodaysStory/blob/main/storyoftoday/images/homeview.png" width="30%">
+<img alt="color_screen" src="https://github.com/seolaox/TodaysStory/blob/main/storyoftoday/images/eventupdate.png.png" width="30%">
+<img alt="color_screen" src="https://github.com/seolaox/TodaysStory/blob/main/storyoftoday/images/eventdelete.png.png" width="30%">
+<img alt="color_screen" src="https://github.com/seolaox/TodaysStory/blob/main/storyoftoday/images/eventsearch.png" width="30%">
+
+<br>
+
+- 기록물을 왼쪽으로 밀거나, 탭하여 수정할 수 있습니다.
+- 기록물을 오른쪽으로 밀어 삭제할 수 있습니다.
+- 기록물의 내용을 기반으로 검색할 수 있습니다.
+
+### 4. 내용 디테일 화면
+
+<img alt="color_screen" src="https://github.com/seolaox/TodaysStory/blob/main/storyoftoday/images/eventdetail.png" width="30%">
+<img alt="color_screen" src="https://github.com/seolaox/TodaysStory/blob/main/storyoftoday/images/eventpagedetail.png" width="30%">
 
 
 <br>
 
-- 서비스 이용 약관 항목에서 서비스 이용 약관을 확인하실 수 있습니다.
-- 사용 기록 항목에서 이전 결과 기록들을 확인하실 수 있습니다.
-- 잠금 모드를 활성화하면 iPhone의 TouchID, FaceID, 암호 등을 통해 사용 기록 잠금이 가능합니다.
+- 기록물을 탭하여 자세히 볼 수 있습니다.
+- 달력에 기록한 날짜에 이벤트로 표시되어 기록물에 대한 간략한 내용을 볼 수 있습니다.
 
-### 5. 사용 기록 화면
 
-<img alt="color_screen" src="https://github.com/TheJoeunDorothy/Dorothy/assets/130552875/caf01135-1f37-4f61-95d7-682317419e42" width="30%">
+### 5. 메모 / 투두리스트
+
+<img alt="color_screen" src="https://github.com/seolaox/TodaysStory/blob/main/storyoftoday/images/memoinsert.png" width="30%">
+<img alt="color_screen" src="https://github.com/seolaox/TodaysStory/blob/main/storyoftoday/images/memoupdate.png" width="30%">
+<img alt="color_screen" src="https://github.com/seolaox/TodaysStory/blob/main/storyoftoday/images/memodelete.png" width="30%">
+<img alt="color_screen" src="https://github.com/seolaox/TodaysStory/blob/main/storyoftoday/images/todolist.png" width="30%">
 
 <br>
 
-- 얼굴 사진 결과를 도로시 앱에 저장합니다.
-- 사용 기록 타일을 터치하면 결과 화면과 동일한 화면을 보실 수 있습니다.
-- 사용 기록 타일을 왼쪽으로 슬라이드하면 기록을 삭제하실 수 있습니다.
-- 상단의 휴지통 아이콘으로 저장된 모든 기록 삭제가 가능합니다.
+- 메모, 체크리스트를 slidable을 사용하여 수정, 삭제 할 수 있습니다.
 
 
-# Flow Chart
-![dorothy_flow_chart](https://github.com/TheJoeunDorothy/Dorothy/assets/130552875/93345131-902b-4ba2-8c17-befb0537f119)
+### 5. 설정
 
+<img alt="color_screen" src="https://github.com/seolaox/TodaysStory/blob/main/storyoftoday/images/setting.png" width="30%">
+<img alt="color_screen" src="https://github.com/seolaox/TodaysStory/blob/main/storyoftoday/images/tutorial.png" width="30%">
+
+
+<br>
+
+- 서비스 이용 약관 항목에서 약관을 확인 할 수 있습니다.
+- 사용자의 UX를 고려하여 앱사용설명서를 만들었습니다.
 
 
 # Packages
+
+```yaml
+  # 달력 사용
+  table_calendar: ^3.0.9
+
+  # 달력 날짜 설정위해
+  flutter_localizations:
+    sdk: flutter
+
+  # DB 사용 
+  sqflite: ^2.3.0
+
+  # sqlite 위치파악
+  path: ^1.8.3
+
+  # 앨범 사용
+  image_picker: ^1.0.4
+
+  # 상태 관리
+  get: ^4.6.6
+
+  # 카드 수정, 삭제
+  flutter_slidable: ^3.0.1
+
+  # 탭바 사용
+  motion_tab_bar_v2: ^0.3.0
+
+  # 테마값 저장
+  shared_preferences: ^2.2.2
+
+  #splash 실행화면
+  flutter_native_splash: ^2.3.6
+
+  #intl 
+  intl: ^0.18.1
+
+  # 폰트 사용
+  fonts: 강원교육모두 Bold
+```
+
+ 
 
 
 # Database
