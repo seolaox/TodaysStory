@@ -13,7 +13,7 @@
     <img alt="color_screen" src="https://github.com/seolaox/TodaysStory/blob/main/storyoftoday/images/vacuum.png" width="30%">
     <img alt="color_screen" src="https://github.com/seolaox/TodaysStory/blob/main/storyoftoday/images/eventpage.png" width="30%">
 </div>
-
+<br>
 
 
 - 앱 실행 시 첫 화면 입니다.
@@ -25,9 +25,11 @@
 
 <img alt="color_screen" src="https://github.com/seolaox/TodaysStory/blob/main/storyoftoday/images/eventinsert.png" width="30%">
 
-<br><br>
+<br>
 
 - 날씨, 제목, 내용, 이미지를 첨부하여 기록할 수 있습니다.
+
+  <br><br>
 
 ### 3. 내용 입력 후 홈 화면
 <div style="display: flex; justify-content: space-between;">
@@ -39,11 +41,13 @@
 <img alt="color_screen" src="https://github.com/seolaox/TodaysStory/blob/main/storyoftoday/images/eventsearch.png" width="30%">
 </div>
 
-<br><br>
+<br>
 
 - 기록물을 왼쪽으로 밀거나, 탭하여 수정할 수 있습니다.
 - 기록물을 오른쪽으로 밀어 삭제할 수 있습니다.
 - 기록물의 내용을 기반으로 검색할 수 있습니다.
+
+  <br><br>
 
 ### 4. 내용 디테일 화면
 
@@ -52,11 +56,12 @@
 <img alt="color_screen" src="https://github.com/seolaox/TodaysStory/blob/main/storyoftoday/images/eventpagedetail.png" width="30%">
 </div>
 
-<br><br>
+<br>
 
 - 기록물을 탭하여 자세히 볼 수 있습니다.
 - 달력에 기록한 날짜에 이벤트로 표시되어 기록물에 대한 간략한 내용을 볼 수 있습니다.
 
+<br><br>
 
 ### 5. 메모 / 투두리스트
 <div style="display: flex; justify-content: space-between;">
@@ -66,10 +71,11 @@
 <img alt="color_screen" src="https://github.com/seolaox/TodaysStory/blob/main/storyoftoday/images/todolist.png" width="30%">
 </div>
 
-<br><br>
+<br>
 
 - 메모, 체크리스트를 slidable을 사용하여 수정, 삭제 할 수 있습니다.
 
+<br><br>
 
 ### 5. 설정
 <div style="display: flex; justify-content: space-between;">
@@ -77,11 +83,12 @@
 <img alt="color_screen" src="https://github.com/seolaox/TodaysStory/blob/main/storyoftoday/images/tutorial.png" width="30%">
 </div>
 
-<br><br>
+<br>
 
 - 서비스 이용 약관 항목에서 약관을 확인 할 수 있습니다.
 - 사용자의 UX를 고려하여 앱사용설명서를 만들었습니다.
 
+<br><br>
 
 # Packages
 
@@ -130,6 +137,8 @@
 # Database
     SQLITE  
 
+
+<br>
 
 # 시연 영상
 <a href="https://drive.google.com/file/d/1F7v24omyGk1MSMJKgkiosoN3rd3CIcGN/view?usp=sharing" title="시연영상으로 이동">
