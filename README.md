@@ -14,10 +14,12 @@
     <img alt="color_screen" src="https://github.com/seolaox/TodaysStory/blob/main/storyoftoday/images/eventpage.png" width="30%">
 </div>
 
-<br><br>
+
 
 - 앱 실행 시 첫 화면 입니다.
 - 두 번째 탭 바로 이동하여 floatbutton을 눌러 내용을 입력할 수 있습니다.
+
+<br><br>
 
 ### 2. 입력 화면
 
