@@ -3,7 +3,7 @@
 날씨,내용,이미지를 첨부하여 상세하게 기록할 수 있습니다.
 
 
-2023-11-22 ~ 2023-11-30                      
+2023-11-22 ~ 2023-12-20               
 <img src = https://github.com/seolaox/TodaysStory/blob/main/story%20of%20today%20main%20screen.png> </img>
 
 ------
