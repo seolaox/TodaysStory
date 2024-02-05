@@ -361,7 +361,6 @@ class _MemoPageState extends State<MemoPage>
                     padding: const EdgeInsets.all(3.0),
                     child: TextField(
                       controller: memoController,
-                      maxLength: 200,
                       decoration: const InputDecoration(
                         hintText: '내용을 입력해 주세요. ',
                         enabledBorder: OutlineInputBorder(
@@ -453,7 +452,6 @@ class _MemoPageState extends State<MemoPage>
                   padding: const EdgeInsets.all(3.0),
                   child: TextField(
                     controller: memoModifyController,
-                    maxLength: 200,
                     decoration: const InputDecoration(
                       hintText: '내용을 입력해 주세요. ',
                       enabledBorder: OutlineInputBorder(

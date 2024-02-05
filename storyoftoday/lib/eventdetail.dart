@@ -50,7 +50,7 @@ class _EventDetailState extends State<EventDetail> {
     titleController.text = value[1];
     contentController.text = value[2];
     selectedIcon = getIconTypeFromString(value[3]);
-    image = Image.memory(value[4]);
+    // image = Image.memory(value[4]);
     presentdate =
         value[5] != null ? DateTime.parse(value[5].toString()) : DateTime.now();
     eventUpdateDate = DateTime.parse(value[6]);
@@ -192,27 +192,31 @@ class _EventDetailState extends State<EventDetail> {
   }
 //---FUNCTIONS---
 
-  Widget _buildImagePicker() {
-    return GestureDetector(
-      onTap: () {
-        //
-      },
-      child: Container(
-        width: 390,
-        height: 420,
-        decoration: BoxDecoration(
-          color: const Color.fromARGB(255, 212, 221, 247),
-          image: imageFile == null
-              ? DecorationImage(
-                  image: MemoryImage(value[4]),
-                  fit: BoxFit.cover,
+  // Widget _buildImagePicker() {
+  //   return Container(
+  //     width: 390,
+  //     height: 420,
+  //     child: (value[4] != null) ? Image.memory(value[4]) : Image.asset('images/empty.png'),
+  //   );
+  // }
+
+    Widget _buildImagePicker() {
+    return Container(
+      width: 390,
+      height: 420,
+      child: (value[4] != null) 
+      ? Image.memory(value[4],fit: BoxFit.cover,) 
+      : Container(
+                width: double.infinity,
+                color:(value[4] == null) ? Color.fromARGB(255, 222, 228, 246) : Colors.transparent,
+                child: (value[4] != null)
+                    ? Image.memory(value[4])
+                    : Icon(
+                  Icons.event_busy,
+                  size: 65,
+                  color: Color.fromARGB(255, 144, 144, 170),
                 )
-              : DecorationImage(
-                  image: FileImage(File(imageFile!.path)),
-                  fit: BoxFit.cover,
-                ),
-        ),
-      ),
+              )
     );
   }
 

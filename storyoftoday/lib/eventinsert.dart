@@ -288,15 +288,16 @@ class _EventInsertState extends State<EventInsert> {
                             backgroundColor: const Color.fromARGB(255, 247, 228, 162),
                           );
                             }else if(imageFile == null){
-                              Get.snackbar(
-                            "ERROR",
-                            "사진을 선택해 주세요.",
-                            snackPosition: SnackPosition.BOTTOM,
-                            duration: const Duration(seconds: 2),
-                            colorText: Colors.black,
-                            backgroundColor: const Color.fromARGB(255, 248, 201, 168),);
+                            //   Get.snackbar(
+                            // "ERROR",
+                            // "사진을 선택해 주세요.",
+                            // snackPosition: SnackPosition.BOTTOM,
+                            // duration: const Duration(seconds: 2),
+                            // colorText: Colors.black,
+                            // backgroundColor: const Color.fromARGB(255, 248, 201, 168),);
+                            insertAction(true);
                             }else{
-                                insertAction();
+                                insertAction(false);
                             }
                     
           
@@ -353,6 +354,26 @@ getImageFromGallery(ImageSource imageSource) async {
   }
 }
 
+getImageFromCamera(ImageSource imageSource) async {
+  try {
+    final XFile? pickedFile = await picker.pickImage(source: imageSource);
+    
+    if (pickedFile == null) {
+      // 사용자가 이미지 선택을 취소한 경우
+      return;
+    } else {
+      imageFile = XFile(pickedFile.path);
+      setState(() {});
+    }
+  } catch (e) {
+    // 예외 처리
+    if (e is PlatformException && e.code == 'photo_access_denied') {
+      // 사용자가 사진 액세스를 거부한 경우
+      showPhotoAccessDeniedDialog();
+    } 
+  }
+}
+
 void showPhotoAccessDeniedDialog() {
   // 사용자에게 사진 액세스 권한이 필요하다는 메시지를 표시
   Get.defaultDialog(
@@ -373,7 +394,42 @@ void showPhotoAccessDeniedDialog() {
   Widget _buildImagePicker() {
     return GestureDetector(
       onTap: () {
-        getImageFromGallery(ImageSource.gallery);
+        Get.defaultDialog(
+          title: '사진 등록',
+          middleText: '사진을 등록할 방법을 선택해 주세요',
+          actions: [
+            ElevatedButton(
+              onPressed: () {
+                getImageFromGallery(ImageSource.gallery);
+              },
+              style: ElevatedButton.styleFrom(
+                    minimumSize: const Size(70, 40),
+                    // backgroundColor: Color.fromARGB(255, 146, 148, 255),
+                    backgroundColor:Color.fromARGB(255, 183, 177, 255),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+            child: Text('갤러리', style: TextStyle(fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                      color: Color.fromARGB(255, 234, 234, 236),))),
+            ElevatedButton(
+              onPressed: () {
+                getImageFromGallery(ImageSource.camera);
+              },
+              style: ElevatedButton.styleFrom(
+                    minimumSize: const Size(70, 40),
+                    // backgroundColor: Color.fromARGB(255, 146, 148, 255),
+                    backgroundColor: Color.fromARGB(255, 183, 177, 255),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+            child: Text('사진', style: TextStyle(fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                      color: Color.fromARGB(255, 234, 234, 236),))),
+          ]
+          );
       },
       child: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -401,14 +457,18 @@ void showPhotoAccessDeniedDialog() {
     );
   }
 
-insertAction() async {
+insertAction(bool isImageEmpty) async {
   // 순서가 필요할 때는 무조건 async
   String title = titleController.text;
   String content = contentController.text;
 
+  Uint8List getImage = Uint8List(0);
+
   // file type을 byte type으로 변환하기
-  File imageFile1 = File(imageFile!.path); // imageFile 경로를 file로 만들어 넣기
-  Uint8List getImage = await imageFile1.readAsBytes(); // file type을 8type으로 변환
+  if(!isImageEmpty){
+    File imageFile1 = File(imageFile!.path); // imageFile 경로를 file로 만들어 넣기
+    getImage = await imageFile1.readAsBytes(); // file type을 8type으로 변환
+  }
 
   // formattedDate를 그대로 사용
   String eventDate = formattedDate;
@@ -417,7 +477,7 @@ insertAction() async {
     title: title,
     content: content,
     weathericon: getIconString(selectedIcon),
-    image: getImage,
+    image: (isImageEmpty) ? null : getImage,
     actiondate: DateTime.now(),
     eventdate: eventDate, // formattedDate를 String으로 그대로 할당
   );

@@ -32,7 +32,7 @@ class _MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
-      return GestureDetector(
+    return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         appBar: AppBar(
@@ -101,8 +101,8 @@ class _MainPageState extends State<MainPage> {
                                 children: [
                                   SlidableAction(
                                     //버튼 눌렀을때 action
-                                    backgroundColor:
-                                        const Color.fromARGB(255, 190, 201, 244),
+                                    backgroundColor: const Color.fromARGB(
+                                        255, 190, 201, 244),
                                     icon: Icons.edit,
                                     label: 'Edit',
                                     onPressed: (context) {
@@ -128,8 +128,8 @@ class _MainPageState extends State<MainPage> {
                                 children: [
                                   SlidableAction(
                                     //버튼 눌렀을때 action
-                                    backgroundColor:
-                                        const Color.fromARGB(255, 255, 158, 151),
+                                    backgroundColor: const Color.fromARGB(
+                                        255, 255, 158, 151),
                                     icon: Icons.delete,
                                     label: 'Delete',
                                     onPressed: (context) async {
@@ -151,8 +151,9 @@ class _MainPageState extends State<MainPage> {
                                             ElevatedButton(
                                                 onPressed: () async {
                                                   await handler.deleteSdiary(
-                                                      snapshot.data![index].id!);
-                                                      snapshot.data!.remove(
+                                                      snapshot
+                                                          .data![index].id!);
+                                                  snapshot.data!.remove(
                                                       snapshot.data![index]);
                                                   Get.back();
                                                   setState(() {});
@@ -162,14 +163,16 @@ class _MainPageState extends State<MainPage> {
                                                 style: ElevatedButton.styleFrom(
                                                   minimumSize:
                                                       const Size(400, 60),
-                                                  backgroundColor: const Color.fromARGB(
-                                                      255, 255, 188, 183),
+                                                  backgroundColor:
+                                                      const Color.fromARGB(
+                                                          255, 255, 188, 183),
                                                 ),
                                                 child: const Text(
                                                   'DELETE',
                                                   style: TextStyle(
                                                       fontSize: 22,
-                                                      fontWeight: FontWeight.bold,
+                                                      fontWeight:
+                                                          FontWeight.bold,
                                                       color: Colors.black),
                                                 )),
                                             const SizedBox(
@@ -187,13 +190,12 @@ class _MainPageState extends State<MainPage> {
                                                         Theme.of(context)
                                                             .colorScheme
                                                             .surface),
-                                                child: const Text(
-                                                  'CANCEL',
-                                                  style: TextStyle(
-                                                      fontSize: 22,
-                                                      fontWeight: FontWeight.bold,
-                                                      color: Colors.black)
-                                                )),
+                                                child: const Text('CANCEL',
+                                                    style: TextStyle(
+                                                        fontSize: 22,
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        color: Colors.black))),
                                           ],
                                         ),
                                       ));
@@ -226,20 +228,47 @@ class _MainPageState extends State<MainPage> {
                                           CrossAxisAlignment.start,
                                       children: [
                                         SizedBox(
-                                          width: double.infinity, // 이미지의 고정된 너비
-                                          height: 225, // 컨테이너의 높이를 꽉 채우도록 설정
-                                          child: Image.memory( //메모리에 있는 이미지 데이터를 표시
-                                            snapshot.data![index].image, 
-                                            fit: BoxFit.cover,
-                                            // width: 100,
-                                          ),
-                                        ),
+                                            width:
+                                                double.infinity, // 이미지의 고정된 너비
+                                            height: 225, // 컨테이너의 높이를 꽉 채우도록 설정
+                                            child: (snapshot
+                                                        .data![index].image !=
+                                                    null)
+                                                ? Image.memory(
+                                                    //메모리에 있는 이미지 데이터를 표시
+                                                    snapshot
+                                                        .data![index].image!,
+                                                    fit: BoxFit.cover,
+                                                    // width: 100,
+                                                  )
+                                                : Container(
+                                                    width: double.infinity,
+                                                    color: (snapshot
+                                                                .data![index]
+                                                                .image !=
+                                                            null)
+                                                        ? Color.fromARGB(
+                                                            255, 212, 221, 247)
+                                                        : Colors.transparent,
+                                                    child: (snapshot
+                                                                .data![index]
+                                                                .image !=
+                                                            null)
+                                                        ? Image.memory(snapshot
+                                                            .data![index]
+                                                            .image!)
+                                                        : Icon(
+                                                            Icons.event_busy,
+                                                            size: 55,
+                                                            color: Color.fromARGB(255, 144, 144, 170),
+                                                          ))),
                                         Row(
                                           children: [
                                             Text(
                                               snapshot.data![index].eventdate ??
                                                   'No Date',
-                                              style: const TextStyle(fontSize: 14),
+                                              style:
+                                                  const TextStyle(fontSize: 14),
                                             ),
                                             IconButton(
                                               onPressed: () {},
@@ -294,7 +323,7 @@ class _MainPageState extends State<MainPage> {
   }
 
 // 문자열 iconString을 입력으로 받아 해당하는 아이콘을 생성하는 Flutter 위젯을 반환
-    getIconWidget(String iconString) {
+  getIconWidget(String iconString) {
     switch (iconString.toLowerCase()) {
       case 'sunny':
         return Icon(

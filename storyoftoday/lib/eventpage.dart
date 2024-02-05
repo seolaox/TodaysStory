@@ -105,7 +105,7 @@ class _EventPageState extends State<EventPage> {
                           },
                         ),
                         const SizedBox(height: 10),
-                        if (events[selectedDay] != null)
+                        // if (events[selectedDay] != null)
                           Container(
                             padding: const EdgeInsets.only(top: 30),
                             height: 345,
@@ -128,8 +128,9 @@ class _EventPageState extends State<EventPage> {
                                     style: TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.bold,
-                                      color:
-                                          Theme.of(context).colorScheme.secondary,
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .secondary,
                                     ),
                                   ),
                                 ),
@@ -156,24 +157,38 @@ class _EventPageState extends State<EventPage> {
                                                 SizedBox(
                                                   width: 220,
                                                   height: 195,
-                                                  child: Image.memory(
-                                                    event.image,
-                                                    fit: BoxFit.cover,
-                                                  ),
+                                                  child: (event.image != null)
+                                                      ? Image.memory(
+                                                          event.image!,
+                                                          fit: BoxFit.cover,
+                                                        )
+                                                      : Container(
+                                                      width: double.infinity,
+                                                      color:(event.image != null) ? Color.fromARGB(255, 222, 228, 246) : Colors.transparent,
+                                                      child: (event.image != null)
+                                                          ?  Image.memory(event.image!,fit: BoxFit.cover,)
+                                                          : Icon(
+                                                        Icons.event_busy,
+                                                        size: 48,
+                                                        color: Color.fromARGB(255, 144, 144, 170),
+                                                      )
+                                                    )
                                                 ),
                                                 const SizedBox(width: 5),
                                                 Flexible(
                                                   child: Column(
-                                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
                                                     children: [
                                                       Row(
                                                         children: [
                                                           Text(
                                                             event.title,
                                                             style:
-                                                            const TextStyle(
-                                                          fontSize: 14,
-                                                        ),
+                                                                const TextStyle(
+                                                              fontSize: 14,
+                                                            ),
                                                           ),
                                                           IconButton(
                                                             onPressed: () {},
@@ -186,8 +201,7 @@ class _EventPageState extends State<EventPage> {
                                                       ),
                                                       Text(
                                                         event.eventdate,
-                                                        style:
-                                                            const TextStyle(
+                                                        style: const TextStyle(
                                                           fontSize: 15,
                                                         ),
                                                         maxLines: 7,
