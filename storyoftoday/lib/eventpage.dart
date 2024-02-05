@@ -105,7 +105,7 @@ class _EventPageState extends State<EventPage> {
                           },
                         ),
                         const SizedBox(height: 10),
-                        // if (events[selectedDay] != null)
+                        if (events[selectedDay] != null)
                           Container(
                             padding: const EdgeInsets.only(top: 30),
                             height: 345,

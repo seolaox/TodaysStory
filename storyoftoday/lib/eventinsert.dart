@@ -349,7 +349,7 @@ getImageFromGallery(ImageSource imageSource) async {
     // 예외 처리
     if (e is PlatformException && e.code == 'photo_access_denied') {
       // 사용자가 사진 액세스를 거부한 경우
-      showPhotoAccessDeniedDialog();
+      showPhotoAccessDeniedDialog('갤러리');
     } 
   }
 }
@@ -367,19 +367,19 @@ getImageFromCamera(ImageSource imageSource) async {
     }
   } catch (e) {
     // 예외 처리
-    if (e is PlatformException && e.code == 'photo_access_denied') {
+    if (e is PlatformException && e.code == 'camera_access_denied') {
       // 사용자가 사진 액세스를 거부한 경우
-      showPhotoAccessDeniedDialog();
+      showPhotoAccessDeniedDialog('카메라');
     } 
   }
 }
 
-void showPhotoAccessDeniedDialog() {
+void showPhotoAccessDeniedDialog(String pickerType) {
   // 사용자에게 사진 액세스 권한이 필요하다는 메시지를 표시
   Get.defaultDialog(
-    title: '사진 액세스 거부됨',
+    title: '$pickerType 액세스 거부됨',
     titleStyle: const TextStyle(fontSize: 18, fontWeight: FontWeight.w900, color: Colors.black),
-    middleText: '사진 액세스 권한이 필요합니다. \n 설정에서 권한을 부여해주세요.',
+    middleText: '$pickerType 액세스 권한이 필요합니다. \n 설정에서 권한을 부여해주세요.',
     middleTextStyle: const TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: Colors.black),
     backgroundColor: Theme.of(context).colorScheme.errorContainer,
     actions: [TextButton(
@@ -415,7 +415,7 @@ void showPhotoAccessDeniedDialog() {
                       color: Color.fromARGB(255, 234, 234, 236),))),
             ElevatedButton(
               onPressed: () {
-                getImageFromGallery(ImageSource.camera);
+                getImageFromCamera(ImageSource.camera);
               },
               style: ElevatedButton.styleFrom(
                     minimumSize: const Size(70, 40),
@@ -425,7 +425,7 @@ void showPhotoAccessDeniedDialog() {
                       borderRadius: BorderRadius.circular(10),
                     ),
                   ),
-            child: Text('사진', style: TextStyle(fontSize: 15,
+            child: Text('카메라', style: TextStyle(fontSize: 15,
                       fontWeight: FontWeight.bold,
                       color: Color.fromARGB(255, 234, 234, 236),))),
           ]

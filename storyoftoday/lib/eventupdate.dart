@@ -368,7 +368,7 @@ class _EventUpdateState extends State<EventUpdate> {
                       color: Color.fromARGB(255, 234, 234, 236),))),
             ElevatedButton(
               onPressed: () {
-                getImageFromGallery(ImageSource.camera);
+                getImageFromCamera(ImageSource.camera);
               },
               style: ElevatedButton.styleFrom(
                     minimumSize: const Size(70, 40),
@@ -378,7 +378,7 @@ class _EventUpdateState extends State<EventUpdate> {
                       borderRadius: BorderRadius.circular(10),
                     ),
                   ),
-            child: Text('사진', style: TextStyle(fontSize: 15,
+            child: Text('카메라', style: TextStyle(fontSize: 15,
                       fontWeight: FontWeight.bold,
                       color: Color.fromARGB(255, 234, 234, 236),))),
           ]
