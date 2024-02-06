@@ -15,7 +15,7 @@ class _TutorialState extends State<Tutorial> {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: AppBar(
-        toolbarHeight: 65,
+        toolbarHeight: 55,
         title: const Padding(
           padding: EdgeInsets.fromLTRB(0, 0, 45, 0),
           child: AppbarTitle(),

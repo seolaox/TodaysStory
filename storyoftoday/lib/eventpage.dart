@@ -109,7 +109,7 @@ class _EventPageState extends State<EventPage> {
                         if (events[selectedDay] != null)
                           Container(
                             padding: const EdgeInsets.only(top: 30),
-                            height: 345,
+                            height: MediaQuery.of(context).size.height * 0.25,
                             decoration: BoxDecoration(
                               borderRadius: const BorderRadius.only(
                                 topLeft: Radius.circular(50),

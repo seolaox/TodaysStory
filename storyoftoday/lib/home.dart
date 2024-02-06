@@ -50,7 +50,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.secondaryContainer,
       appBar: AppBar(
-        toolbarHeight: 65,
+        toolbarHeight: 55,
         title: const AppbarTitle(),
         flexibleSpace: Container(
           decoration: BoxDecoration(
