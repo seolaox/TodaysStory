@@ -192,32 +192,44 @@ class _EventDetailState extends State<EventDetail> {
   }
 //---FUNCTIONS---
 
-  // Widget _buildImagePicker() {
+  //   Widget _buildImagePicker() {
   //   return Container(
   //     width: 390,
   //     height: 420,
-  //     child: (value[4] != null) ? Image.memory(value[4]) : Image.asset('images/empty.png'),
+  //     child: (value[4] != null) 
+  //     ? Image.memory(value[4],fit: BoxFit.cover,) 
+  //     : Container(
+  //               width: double.infinity,
+  //               color:(value[4] == null) ? Color.fromARGB(255, 222, 228, 246) : Colors.transparent,
+  //               child: (value[4] != null)
+  //                   ? Image.memory(value[4])
+  //                   : Icon(
+  //                 Icons.event_busy,
+  //                 size: 65,
+  //                 color: Color.fromARGB(255, 144, 144, 170),
+  //               )
+  //             )
   //   );
   // }
 
     Widget _buildImagePicker() {
-    return Container(
-      width: 390,
-      height: 420,
-      child: (value[4] != null) 
-      ? Image.memory(value[4],fit: BoxFit.cover,) 
+      return (value[4] != null) 
+      ? Container(
+            width: 390,
+            height: 420,
+            child:  Image.memory(value[4],
+            fit: BoxFit.cover,)
+          )
       : Container(
-                width: double.infinity,
-                color:(value[4] == null) ? Color.fromARGB(255, 222, 228, 246) : Colors.transparent,
-                child: (value[4] != null)
-                    ? Image.memory(value[4])
-                    : Icon(
-                  Icons.event_busy,
-                  size: 65,
-                  color: Color.fromARGB(255, 144, 144, 170),
-                )
-              )
-    );
+            width: 390,
+            height: 180,
+            color: Color.fromARGB(255, 222, 228, 246) ,
+            child: Icon(
+              Icons.event_busy,
+              size: 55,
+              color: Color.fromARGB(255, 144, 144, 170),
+            )
+          );
   }
 
   Widget getIconWidget(String iconString) {

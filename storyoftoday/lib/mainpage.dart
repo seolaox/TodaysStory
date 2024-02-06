@@ -218,85 +218,88 @@ class _MainPageState extends State<MainPage> {
                                     ])!
                                     .then((value) => reloadData());
                               },
-                              child: Card(
-                                child: SizedBox(
-                                  height: 350,
-                                  width: double.infinity,
-                                  child: SingleChildScrollView(
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        SizedBox(
-                                            width:
-                                                double.infinity, // 이미지의 고정된 너비
-                                            height: 225, // 컨테이너의 높이를 꽉 채우도록 설정
-                                            child: (snapshot
-                                                        .data![index].image !=
-                                                    null)
-                                                ? Image.memory(
-                                                    //메모리에 있는 이미지 데이터를 표시
-                                                    snapshot
-                                                        .data![index].image!,
-                                                    fit: BoxFit.cover,
-                                                    // width: 100,
-                                                  )
-                                                : Container(
-                                                    width: double.infinity,
-                                                    color: (snapshot
-                                                                .data![index]
-                                                                .image !=
-                                                            null)
-                                                        ? Color.fromARGB(
-                                                            255, 212, 221, 247)
-                                                        : Colors.transparent,
-                                                    child: (snapshot
-                                                                .data![index]
-                                                                .image !=
-                                                            null)
-                                                        ? Image.memory(snapshot
-                                                            .data![index]
-                                                            .image!)
-                                                        : Icon(
-                                                            Icons.event_busy,
-                                                            size: 55,
-                                                            color: Color.fromARGB(255, 144, 144, 170),
-                                                          ))),
-                                        Row(
-                                          children: [
-                                            Text(
-                                              snapshot.data![index].eventdate ??
-                                                  'No Date',
-                                              style:
-                                                  const TextStyle(fontSize: 14),
-                                            ),
-                                            IconButton(
-                                              onPressed: () {},
-                                              iconSize: 18,
-                                              icon: getIconWidget(snapshot
-                                                      .data![index]
-                                                      .weathericon ??
-                                                  ''),
-                                            ),
-                                          ],
-                                        ),
-                                        Text(
-                                          snapshot.data![index].title,
-                                          style: const TextStyle(
-                                              fontSize: 16,
-                                              fontWeight: FontWeight.bold),
-                                          maxLines:
-                                              1, // 한 줄을 초과하면 말줄임표(ellipsis)를 표시
-                                          overflow: TextOverflow.ellipsis,
-                                        ),
-                                        Text(
-                                          snapshot.data![index].content,
-                                          style: const TextStyle(fontSize: 15),
-                                          maxLines:
-                                              1, // 한 줄을 초과하면 말줄임표(ellipsis)를 표시
-                                          overflow: TextOverflow.ellipsis,
-                                        ),
-                                      ],
+                              child: Padding(
+                                padding: const EdgeInsets.all(3.0),
+                                child: Card(
+                                  child: SizedBox(
+                                    height: 350,
+                                    width: double.infinity,
+                                    child: SingleChildScrollView(
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          SizedBox(
+                                              width:
+                                                  double.infinity, // 이미지의 고정된 너비
+                                              height: 225, // 컨테이너의 높이를 꽉 채우도록 설정
+                                              child: (snapshot
+                                                          .data![index].image !=
+                                                      null)
+                                                  ? Image.memory(
+                                                      //메모리에 있는 이미지 데이터를 표시
+                                                      snapshot
+                                                          .data![index].image!,
+                                                      fit: BoxFit.cover,
+                                                      // width: 100,
+                                                    )
+                                                  : Container(
+                                                      width: double.infinity,
+                                                      color: (snapshot
+                                                                  .data![index]
+                                                                  .image !=
+                                                              null)
+                                                          ? Color.fromARGB(
+                                                              255, 212, 221, 247)
+                                                          : Colors.transparent,
+                                                      child: (snapshot
+                                                                  .data![index]
+                                                                  .image !=
+                                                              null)
+                                                          ? Image.memory(snapshot
+                                                              .data![index]
+                                                              .image!)
+                                                          : Icon(
+                                                              Icons.event_busy,
+                                                              size: 55,
+                                                              color: Color.fromARGB(255, 144, 144, 170),
+                                                            ))),
+                                          Row(
+                                            children: [
+                                              Text(
+                                                snapshot.data![index].eventdate ??
+                                                    'No Date',
+                                                style:
+                                                    const TextStyle(fontSize: 14),
+                                              ),
+                                              IconButton(
+                                                onPressed: () {},
+                                                iconSize: 18,
+                                                icon: getIconWidget(snapshot
+                                                        .data![index]
+                                                        .weathericon ??
+                                                    ''),
+                                              ),
+                                            ],
+                                          ),
+                                          Text(
+                                            snapshot.data![index].title,
+                                            style: const TextStyle(
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.bold),
+                                            maxLines:
+                                                1, // 한 줄을 초과하면 말줄임표(ellipsis)를 표시
+                                            overflow: TextOverflow.ellipsis,
+                                          ),
+                                          Text(
+                                            snapshot.data![index].content,
+                                            style: const TextStyle(fontSize: 15),
+                                            maxLines:
+                                                1, // 한 줄을 초과하면 말줄임표(ellipsis)를 표시
+                                            overflow: TextOverflow.ellipsis,
+                                          ),
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ),
