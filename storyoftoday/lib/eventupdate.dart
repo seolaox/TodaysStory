@@ -353,6 +353,7 @@ class _EventUpdateState extends State<EventUpdate> {
           actions: [
             ElevatedButton(
               onPressed: () {
+                Get.back();
                 getImageFromGallery(ImageSource.gallery);
               },
               style: ElevatedButton.styleFrom(
@@ -368,6 +369,7 @@ class _EventUpdateState extends State<EventUpdate> {
                       color: Color.fromARGB(255, 234, 234, 236),))),
             ElevatedButton(
               onPressed: () {
+                Get.back();
                 getImageFromCamera(ImageSource.camera);
               },
               style: ElevatedButton.styleFrom(
@@ -392,7 +394,7 @@ class _EventUpdateState extends State<EventUpdate> {
                 height: 270,
                 color:(value[4] == null) ? Color.fromARGB(255, 212, 221, 247) : Colors.transparent,
                 child: (value[4] != null)
-                    ? Image.memory(value[4])
+                    ? Image.memory(value[4],fit: BoxFit.cover,)
                     : Icon(
                   Icons.add_a_photo,
                   size: 48,
@@ -407,6 +409,7 @@ class _EventUpdateState extends State<EventUpdate> {
       ),
     );
   }
+
 
   // updateAction 함수에서 eventDate를 DateTime으로 변환하여 설정
   updateAction() async {

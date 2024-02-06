@@ -60,7 +60,7 @@ class _SettingState extends State<Setting> {
                 height: 60,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 238, 239, 242),
+                  color: Theme.of(context).colorScheme.onInverseSurface,
                   borderRadius: BorderRadius.circular(10), // 원하는 둥글기 정도를 설정
                 ),
                 child: const Row(
@@ -70,16 +70,16 @@ class _SettingState extends State<Setting> {
                     ),
                     Text(
                       '버전',
-                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: Colors.black)),
+                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600, ),),
                       Spacer(),
                     Padding(
                       padding: EdgeInsets.fromLTRB(0, 0, 30, 0),
                       child: Text(
-                        'ver 1.1',
+                        'ver 1.2',
                         style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w500,
-                            color: Color.fromARGB(255, 146, 146, 146)),
+                            ),
                       ),
                     ),
                   ],
@@ -100,7 +100,7 @@ class _SettingState extends State<Setting> {
                   height: 60,
                   width:  double.infinity,
                   decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 238, 239, 242),
+                    color: Theme.of(context).colorScheme.onInverseSurface,
                     borderRadius: BorderRadius.circular(10), // 원하는 둥글기 정도를 설정
                   ),
                   child: const Row(
@@ -110,7 +110,7 @@ class _SettingState extends State<Setting> {
                       ),
                       Text(
                         '서비스 이용 약관',
-                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: Colors.black)),
+                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600,)),
                         Spacer(),
                       Padding(
                         padding: EdgeInsets.fromLTRB(0, 0, 30, 0),
@@ -133,7 +133,7 @@ class _SettingState extends State<Setting> {
                   height: 60,
                   width:  double.infinity,
                   decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 238, 239, 242),
+                    color: Theme.of(context).colorScheme.onInverseSurface,
                     borderRadius: BorderRadius.circular(10), // 원하는 둥글기 정도를 설정
                   ),
                   child: const Row(
@@ -143,7 +143,7 @@ class _SettingState extends State<Setting> {
                       ),
                       Text(
                         'Tutorial',
-                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: Colors.black)),
+                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600,)),
                         Spacer(),
                       Padding(
                         padding: EdgeInsets.fromLTRB(0, 0, 30, 0),
@@ -164,7 +164,7 @@ class _SettingState extends State<Setting> {
                 height: 60,
                 width:  double.infinity,
                 decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 238, 239, 242),
+                  color: Theme.of(context).colorScheme.onInverseSurface,
                   borderRadius: BorderRadius.circular(10), // 원하는 둥글기 정도를 설정
                 ),
                 child: Row(
@@ -172,7 +172,7 @@ class _SettingState extends State<Setting> {
                     const SizedBox(width: 20,),
                     Text(themeName,
                         style:
-                    const TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: Colors.black)),
+                    const TextStyle(fontSize: 18, fontWeight: FontWeight.w600)),
                     const Spacer(), //항상 오른쪽 끝에 위치, 남는 공간을 채움
                     Padding(
                       padding: const EdgeInsets.fromLTRB(0, 0, 20, 0),

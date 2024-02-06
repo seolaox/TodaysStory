@@ -104,7 +104,8 @@ class _EventPageState extends State<EventPage> {
                                 selectedDay ?? DateTime.now(), day);
                           },
                         ),
-                        const SizedBox(height: 10),
+                        const SizedBox(
+                          height: 140),
                         if (events[selectedDay] != null)
                           Container(
                             padding: const EdgeInsets.only(top: 30),
@@ -148,15 +149,16 @@ class _EventPageState extends State<EventPage> {
                                         child: Padding(
                                           padding: const EdgeInsets.all(8.0),
                                           child: SizedBox(
-                                            height: 200,
+                                            height: 130,
                                             width: double.infinity,
                                             child: Row(
                                               crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
+                                                  CrossAxisAlignment.center,
                                               children: [
                                                 SizedBox(
-                                                  width: 220,
-                                                  height: 195,
+                                                  width:  130,
+                                                  height: 100,
+                                                  // height: MediaQuery.of(context).size.height * 0.001,
                                                   child: (event.image != null)
                                                       ? Image.memory(
                                                           event.image!,
@@ -174,7 +176,7 @@ class _EventPageState extends State<EventPage> {
                                                       )
                                                     )
                                                 ),
-                                                const SizedBox(width: 5),
+                                                const SizedBox(width: 20),
                                                 Flexible(
                                                   child: Column(
                                                     crossAxisAlignment:
@@ -189,6 +191,8 @@ class _EventPageState extends State<EventPage> {
                                                                 const TextStyle(
                                                               fontSize: 14,
                                                             ),
+                                                            maxLines: 1,
+                                                            overflow: TextOverflow.ellipsis,
                                                           ),
                                                           IconButton(
                                                             onPressed: () {},
@@ -204,7 +208,7 @@ class _EventPageState extends State<EventPage> {
                                                         style: const TextStyle(
                                                           fontSize: 15,
                                                         ),
-                                                        maxLines: 7,
+                                                        maxLines: 3,
                                                         overflow: TextOverflow
                                                             .ellipsis,
                                                       ),

@@ -285,7 +285,7 @@ class _EventInsertState extends State<EventInsert> {
                             snackPosition: SnackPosition.BOTTOM,
                             duration: const Duration(seconds: 2),
                             colorText: Colors.black,
-                            backgroundColor: const Color.fromARGB(255, 247, 228, 162),
+                            backgroundColor: Color.fromARGB(255, 245, 230, 169),
                           );
                             }else if(imageFile == null){
                             //   Get.snackbar(
@@ -381,7 +381,7 @@ void showPhotoAccessDeniedDialog(String pickerType) {
     titleStyle: const TextStyle(fontSize: 18, fontWeight: FontWeight.w900, color: Colors.black),
     middleText: '$pickerType 액세스 권한이 필요합니다. \n 설정에서 권한을 부여해주세요.',
     middleTextStyle: const TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: Colors.black),
-    backgroundColor: Theme.of(context).colorScheme.errorContainer,
+    backgroundColor: Colors.pink[100],
     actions: [TextButton(
       onPressed: () {
         Get.back();
@@ -400,6 +400,7 @@ void showPhotoAccessDeniedDialog(String pickerType) {
           actions: [
             ElevatedButton(
               onPressed: () {
+                Get.back();
                 getImageFromGallery(ImageSource.gallery);
               },
               style: ElevatedButton.styleFrom(
@@ -415,6 +416,7 @@ void showPhotoAccessDeniedDialog(String pickerType) {
                       color: Color.fromARGB(255, 234, 234, 236),))),
             ElevatedButton(
               onPressed: () {
+                Get.back();
                 getImageFromCamera(ImageSource.camera);
               },
               style: ElevatedButton.styleFrom(

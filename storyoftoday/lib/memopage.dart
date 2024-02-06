@@ -268,6 +268,7 @@ class _MemoPageState extends State<MemoPage>
                                                           fontSize: 17,
                                                           fontWeight:
                                                               FontWeight.bold),
+                                                              
                                                       maxLines:
                                                           1, // 한 줄을 초과하면 말줄임표(ellipsis)를 표시
                                                       overflow: TextOverflow.ellipsis,
@@ -388,7 +389,18 @@ class _MemoPageState extends State<MemoPage>
                   ),
                   ElevatedButton(
                     onPressed: () {
+                      if(memoController.text.isEmpty){
+                        Get.snackbar(
+                            "ERROR",
+                            "내용을 입력해 주세요.",
+                            snackPosition: SnackPosition.BOTTOM,
+                            duration: const Duration(seconds: 2),
+                            colorText: Colors.black,
+                            backgroundColor: const Color.fromARGB(255, 248, 201, 168),);
+
+                      }else{
                       insertAction()!.then((value) => reloadData());
+                      }
                     },
                     style: ElevatedButton.styleFrom(
                       minimumSize: const Size(100, 50),
@@ -479,7 +491,18 @@ class _MemoPageState extends State<MemoPage>
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    updateAction(memo.id!)!.then((value) => reloadData());
+                    if(memoModifyController.text.isEmpty){
+                        Get.snackbar(
+                            "ERROR",
+                            "내용을 입력해 주세요.",
+                            snackPosition: SnackPosition.BOTTOM,
+                            duration: const Duration(seconds: 2),
+                            colorText: Colors.black,
+                            backgroundColor: const Color.fromARGB(255, 248, 201, 168),);
+
+                      }else{
+                      updateAction(memo.id!)!.then((value) => reloadData());
+                      }
                   },
                   style: ElevatedButton.styleFrom(
                     minimumSize: const Size(100, 50),
@@ -571,7 +594,18 @@ class _MemoPageState extends State<MemoPage>
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    insertTodoAction()!.then((value) => reloadData());
+                    if(todoController.text.isEmpty){
+                        Get.snackbar(
+                            "ERROR",
+                            "내용을 입력해 주세요.",
+                            snackPosition: SnackPosition.BOTTOM,
+                            duration: const Duration(seconds: 2),
+                            colorText: Colors.black,
+                            backgroundColor: const Color.fromARGB(255, 248, 201, 168),);
+
+                      }else{
+                      insertTodoAction()!.then((value) => reloadData());
+                      }
                   },
                   style: ElevatedButton.styleFrom(
                     minimumSize: const Size(100, 50),
@@ -666,7 +700,19 @@ class _MemoPageState extends State<MemoPage>
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    updateTodoAction(todo.id!)!.then((value) => reloadData());
+                    if(todoModiftController.text.isEmpty){
+                        Get.snackbar(
+                            "ERROR",
+                            "내용을 입력해 주세요.",
+                            snackPosition: SnackPosition.BOTTOM,
+                            duration: const Duration(seconds: 2),
+                            colorText: Colors.black,
+                            backgroundColor: const Color.fromARGB(255, 248, 201, 168),);
+
+                      }else{
+                      updateTodoAction(todo.id!)!.then((value) => reloadData());
+                      }
+                    
                   },
                   style: ElevatedButton.styleFrom(
                     minimumSize: const Size(100, 50),
