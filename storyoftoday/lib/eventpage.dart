@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:storyoftoday/eventupdate.dart';
 import 'package:storyoftoday/model/datehandler.dart';
 import 'package:storyoftoday/model/event.dart';
 import 'package:table_calendar/table_calendar.dart';
@@ -35,24 +36,25 @@ class _EventPageState extends State<EventPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: FutureBuilder(
-          future: handler.querySdiary(),
-          builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.waiting) {
-              return const CircularProgressIndicator();
-            } else if (snapshot.hasError) {
-              return Text('Error: ${snapshot.error}');
-            } else {
-              return FutureBuilder(
-                future: _updateEvents(snapshot.data),
-                builder: (context, snapshot) {
-                  if (snapshot.connectionState == ConnectionState.waiting) {
-                    return const CircularProgressIndicator();
-                  } else {
-                    return Column(
-                      children: [
-                        TableCalendar(
+      body: FutureBuilder(
+        future: handler.querySdiary(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const CircularProgressIndicator();
+          } else if (snapshot.hasError) {
+            return Text('Error: ${snapshot.error}');
+          } else {
+            return FutureBuilder(
+              future: _updateEvents(snapshot.data),
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return const CircularProgressIndicator();
+                } else {
+                  return Column(
+                    children: [
+                      SizedBox(
+                        height: 430,
+                        child: TableCalendar(
                           daysOfWeekHeight: 50,
                           firstDay: DateTime.utc(2000, 1, 1),
                           lastDay: DateTime.utc(2099, 12, 31),
@@ -104,136 +106,136 @@ class _EventPageState extends State<EventPage> {
                                 selectedDay ?? DateTime.now(), day);
                           },
                         ),
-                        const SizedBox(
-                          height: 140),
-                        if (events[selectedDay] != null)
-                          Container(
-                            padding: const EdgeInsets.only(top: 30),
-                            height: MediaQuery.of(context).size.height * 0.25,
-                            decoration: BoxDecoration(
-                              borderRadius: const BorderRadius.only(
-                                topLeft: Radius.circular(50),
-                                topRight: Radius.circular(50),
-                              ),
-                              color: Theme.of(context)
-                                  .colorScheme
-                                  .secondaryContainer,
+                      ),
+                      const SizedBox(
+                        height: 0),
+                      if (events[selectedDay] != null)
+                        Container(
+                          padding: const EdgeInsets.only(top: 30),
+                          height: MediaQuery.of(context).size.height * 0.33,
+                          decoration: BoxDecoration(
+                            borderRadius: const BorderRadius.only(
+                              topLeft: Radius.circular(50),
+                              topRight: Radius.circular(50),
                             ),
-                            child: Stack(
-                              children: [
-                                Positioned(
-                                  top: 0,
-                                  left: 16,
-                                  child: Text(
-                                    '- 이날의 이야기 -',
-                                    style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold,
-                                      color: Theme.of(context)
-                                          .colorScheme
-                                          .secondary,
-                                    ),
+                            color: Theme.of(context)
+                                .colorScheme
+                                .secondaryContainer,
+                          ),
+                          child: Stack(
+                            children: [
+                              Positioned(
+                                top: -5,
+                                left: 16,
+                                child: Text(
+                                  '- 이날의 이야기 -',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold,
+                                    color: Theme.of(context)
+                                        .colorScheme
+                                        .secondary,
                                   ),
                                 ),
-                                Positioned(
-                                  top: 25,
-                                  left: 0,
-                                  right: 0,
-                                  bottom: 0,
-                                  child: ListView.builder(
-                                    itemCount: events[selectedDay]?.length ?? 0,
-                                    itemBuilder: (context, index) {
-                                      MyEvent event =
-                                          events[selectedDay]![index];
-                                      return Card(
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: SizedBox(
-                                            height: 130,
-                                            width: double.infinity,
-                                            child: Row(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.center,
-                                              children: [
-                                                SizedBox(
-                                                  width:  130,
-                                                  height: 100,
-                                                  // height: MediaQuery.of(context).size.height * 0.001,
-                                                  child: (event.image != null)
-                                                      ? Image.memory(
-                                                          event.image!,
-                                                          fit: BoxFit.cover,
-                                                        )
-                                                      : Container(
-                                                      width: double.infinity,
-                                                      color:(event.image != null) ? Color.fromARGB(255, 222, 228, 246) : Colors.transparent,
-                                                      child: (event.image != null)
-                                                          ?  Image.memory(event.image!,fit: BoxFit.cover,)
-                                                          : Icon(
-                                                        Icons.event_busy,
-                                                        size: 48,
-                                                        color: Color.fromARGB(255, 144, 144, 170),
+                              ),
+                              Positioned(
+                                top: 25,
+                                left: 0,
+                                right: 0,
+                                bottom: 0,
+                                child: ListView.builder(
+                                  itemCount: events[selectedDay]?.length ?? 0,
+                                  itemBuilder: (context, index) {
+                                    MyEvent event =
+                                        events[selectedDay]![index];
+                                    return Card(
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: SizedBox(
+                                          height: 130,
+                                          width: double.infinity,
+                                          child: Row(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            children: [
+                                              SizedBox(
+                                                width:  130,
+                                                height: 100,
+                                                // height: MediaQuery.of(context).size.height * 0.001,
+                                                child: (event.image != null)
+                                                    ? Image.memory(
+                                                        event.image!,
+                                                        fit: BoxFit.cover,
                                                       )
+                                                    : Container(
+                                                    width: double.infinity,
+                                                    color:(event.image != null) ? Color.fromARGB(255, 222, 228, 246) : Colors.transparent,
+                                                    child: (event.image != null)
+                                                        ?  Image.memory(event.image!,fit: BoxFit.cover,)
+                                                        : Icon(
+                                                      Icons.event_busy,
+                                                      size: 48,
+                                                      color: Color.fromARGB(255, 144, 144, 170),
                                                     )
-                                                ),
-                                                const SizedBox(width: 20),
-                                                Flexible(
-                                                  child: Column(
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .start,
-                                                    children: [
-                                                      Row(
-                                                        children: [
-                                                          Text(
-                                                            event.title,
-                                                            style:
-                                                                const TextStyle(
-                                                              fontSize: 14,
-                                                            ),
-                                                            maxLines: 1,
-                                                            overflow: TextOverflow.ellipsis,
+                                                  )
+                                              ),
+                                              const SizedBox(width: 20),
+                                              Flexible(
+                                                child: Column(
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment
+                                                          .start,
+                                                  children: [
+                                                    Row(
+                                                      children: [
+                                                        Text(
+                                                          event.title,
+                                                          style:
+                                                              const TextStyle(
+                                                            fontSize: 14,
                                                           ),
-                                                          IconButton(
-                                                            onPressed: () {},
-                                                            iconSize: 16,
-                                                            icon: getIconWidget(
-                                                                event.weathericon ??
-                                                                    ''),
-                                                          ),
-                                                        ],
-                                                      ),
-                                                      Text(
-                                                        event.eventdate,
-                                                        style: const TextStyle(
-                                                          fontSize: 15,
+                                                          maxLines: 1,
+                                                          overflow: TextOverflow.ellipsis,
                                                         ),
-                                                        maxLines: 3,
-                                                        overflow: TextOverflow
-                                                            .ellipsis,
+                                                        IconButton(
+                                                          onPressed: () {},
+                                                          iconSize: 16,
+                                                          icon: getIconWidget(
+                                                              event.weathericon ??
+                                                                  ''),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    Text(
+                                                      event.eventdate,
+                                                      style: const TextStyle(
+                                                        fontSize: 15,
                                                       ),
-                                                    ],
-                                                  ),
+                                                      maxLines: 3,
+                                                      overflow: TextOverflow
+                                                          .ellipsis,
+                                                    ),
+                                                  ],
                                                 ),
-                                              ],
-                                            ),
+                                              ),
+                                            ],
                                           ),
                                         ),
-                                      );
-                                    },
-                                  ),
+                                      ),
+                                    );
+                                  },
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
-                      ],
-                    );
-                  }
-                },
-              );
-            }
-          },
-        ),
+                        ),
+                    ],
+                  );
+                }
+              },
+            );
+          }
+        },
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {

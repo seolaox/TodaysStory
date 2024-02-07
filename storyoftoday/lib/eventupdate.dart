@@ -316,7 +316,7 @@ class _EventUpdateState extends State<EventUpdate> {
   }
 //---FUNCTIONS---
 
-  getImageFromGallery(ImageSource imageSource) async {
+  getImage(ImageSource imageSource) async {
     //이미지 불러올때까지 기다려야 해서 async
     checkGallery = true;
     final XFile? pickedFile = await picker.pickImage(
@@ -331,19 +331,6 @@ class _EventUpdateState extends State<EventUpdate> {
     }
   }
 
-  getImageFromCamera(ImageSource imageSource) async {
-  final XFile? pickedFile = await picker.pickImage(
-        source: imageSource); //카메라에서 찍고, 갤러리에서 선택된게 pickedFile로 들어감
-    if (pickedFile == null) {
-      //취소할 경우 처리
-      return;
-    } else {
-      imageFile =
-          XFile(pickedFile.path); //imageFile에는 경로를 넣어놨는데 xfile의 경로를 알려주는거
-      setState(() {});
-    }
-}
-
   Widget _buildImagePicker() {
     return GestureDetector(
       onTap: () {
@@ -354,7 +341,7 @@ class _EventUpdateState extends State<EventUpdate> {
             ElevatedButton(
               onPressed: () {
                 Get.back();
-                getImageFromGallery(ImageSource.gallery);
+                getImage(ImageSource.gallery);
               },
               style: ElevatedButton.styleFrom(
                     minimumSize: const Size(70, 40),
@@ -370,7 +357,7 @@ class _EventUpdateState extends State<EventUpdate> {
             ElevatedButton(
               onPressed: () {
                 Get.back();
-                getImageFromCamera(ImageSource.camera);
+                getImage(ImageSource.camera);
               },
               style: ElevatedButton.styleFrom(
                     minimumSize: const Size(70, 40),
@@ -404,7 +391,7 @@ class _EventUpdateState extends State<EventUpdate> {
             : Container(
                 width: double.infinity,
                 height: 270,
-                child: Image.file(File(imageFile!.path)),
+                child: Image.file(File(imageFile!.path),fit: BoxFit.cover,),
               ),
       ),
     );
@@ -419,7 +406,7 @@ class _EventUpdateState extends State<EventUpdate> {
     DateTime eventDate = selectedDate; // 선택된 날짜를 DateTime으로 변환
 
     //file type을 byte type으로 변환하기
-    if (checkGallery == true) {
+    if (checkGallery == true && imageFile != null) {
       File imageFile1 = File(imageFile!.path); // imageFile경로를 file로 만들어 넣기
       Uint8List getImage =
           await imageFile1.readAsBytes(); //file type을 8type으로 변환

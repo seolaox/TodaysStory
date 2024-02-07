@@ -691,7 +691,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.minseola.storyoftoday;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = 1226ProvisioningFile;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = 240205TodaysStory;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -726,7 +726,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.minseola.storyoftoday;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = 1226provisioningFileAdHoc;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = 240205TodaysStoryAdHoc;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;

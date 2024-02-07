@@ -435,26 +435,22 @@ void showPhotoAccessDeniedDialog(String pickerType) {
       },
       child: Padding(
         padding: const EdgeInsets.all(20.0),
-        child: Container(
-          width: double.infinity,
-          height: 270,
-          decoration: BoxDecoration(
-            color: const Color.fromARGB(255, 212, 221, 247),
-            image: imageFile != null
-                ? DecorationImage(
-                    image: FileImage(File(imageFile!.path)),
-                    fit: BoxFit.cover,
-                  )
-                : null,
-          ),
-          child: imageFile == null
-              ? const Icon(
+        child: (imageFile == null)
+            ? Container(
+                width: double.infinity,
+                height: 270,
+                color: Color.fromARGB(255, 212, 221, 247),
+                child: Icon(
                   Icons.add_a_photo,
                   size: 48,
                   color: Colors.grey,
                 )
-              : null,
-        ),
+              )
+            : Container(
+                width: double.infinity,
+                height: 270,
+                child: Image.file(File(imageFile!.path), fit: BoxFit.cover,),
+              ),
       ),
     );
   }
